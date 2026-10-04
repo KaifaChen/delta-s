@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="320" viewBox="0 0 620 320">
+<rect width="620" height="320" fill="white"/>
+<text x="310" y="24" font-family="Arial, Helvetica, sans-serif" font-size="15" text-anchor="middle" fill="black" font-weight="normal">Fig. 3  Example 1: transition diagram of the three-state counterexample</text>
+<circle cx="150.0" cy="70.0" r="26" fill="#e8f0fe" stroke="#333" stroke-width="1.5"/>
+<text x="150" y="75" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="black" font-weight="normal">A</text>
+<circle cx="450.0" cy="70.0" r="26" fill="#e8f0fe" stroke="#333" stroke-width="1.5"/>
+<text x="450" y="75" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="black" font-weight="normal">B</text>
+<circle cx="300.0" cy="240.0" r="26" fill="#e8f0fe" stroke="#333" stroke-width="1.5"/>
+<text x="300" y="245" font-family="Arial, Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="black" font-weight="normal">C</text>
+<line x1="165.0" y1="90.0" x2="285.0" y2="225.0" stroke="#c0392b" stroke-width="1.5"/>
+<polygon points="285.0,225.0 277.0,221.0 277.0,229.0" fill="#c0392b"/>
+<text x="185" y="168" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#c0392b" font-weight="normal">a : 1</text>
+<line x1="435.0" y1="90.0" x2="315.0" y2="225.0" stroke="#c0392b" stroke-width="1.5"/>
+<polygon points="315.0,225.0 307.0,221.0 307.0,229.0" fill="#c0392b"/>
+<text x="415" y="168" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#c0392b" font-weight="normal">b : 1</text>
+<line x1="270.0" y1="215.0" x2="180.0" y2="95.0" stroke="#1e8449" stroke-width="1.5"/>
+<polygon points="180.0,95.0 172.0,91.0 172.0,99.0" fill="#1e8449"/>
+<text x="255" y="148" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#1e8449" font-weight="normal">c : 0.5</text>
+<line x1="330.0" y1="215.0" x2="420.0" y2="95.0" stroke="#1e8449" stroke-width="1.5"/>
+<polygon points="420.0,95.0 412.0,91.0 412.0,99.0" fill="#1e8449"/>
+<text x="345" y="148" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#1e8449" font-weight="normal">d : 0.5</text>
+<text x="310" y="283" font-family="Arial, Helvetica, sans-serif" font-size="12" text-anchor="middle" fill="#666" font-weight="normal">Caption: red - edges into C (a:1, b:1); green - edges out of C (c:0.5, d:0.5)</text>
+<text x="310" y="306" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#c0392b" font-weight="normal">S+ ~ S- , yet dS_{A->C} = dS_{B->C} = log 2 > 0</text>
+</svg>
