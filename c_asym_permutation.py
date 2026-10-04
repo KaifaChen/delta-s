@@ -195,7 +195,9 @@ def main():
         n_files += 1
         try:
             with open(fp, "rb") as f:
-                src = f.read()          # bytes 直接传给 parse / bytes are passed directly to parse
+                src = f.read()          # bytes 直接传给 parse
+            if src.startswith(b"\xef\xbb\xbf"):
+                src = src[3:]           # 容忍 Windows 编辑器写入的 UTF-8 BOM / bytes are passed directly to parse
             toks = collect_tokens(parser, src, args.depth)
         except Exception as e:
             n_parse_fail += 1

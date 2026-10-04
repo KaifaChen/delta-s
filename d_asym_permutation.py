@@ -182,7 +182,7 @@ def main():
     for fp in iter_files(args.roots, args.maxfiles):
         n_files += 1
         try:
-            with open(fp, "r", encoding="utf-8", errors="replace") as f:
+            with open(fp, "r", encoding="utf-8-sig", errors="replace") as f:
                 src = f.read()
             toks = collect_tokens(src, args.depth)
         except (SyntaxError, ValueError, UnicodeError):
