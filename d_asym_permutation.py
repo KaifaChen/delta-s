@@ -199,14 +199,19 @@ def main():
         all_tokens.extend(toks)
 
     N = len(all_tokens)
+    print(f"[corpus] depth={args.depth} files={n_files} parsed={n_files-n_parse_fail} "
+          f"skipped_fail={n_parse_fail} tokens={N}", flush=True)
+    if N < 2:
+        print("[error] 语料为空或 token 不足（<2）。请检查 --roots 路径、以及其中的 .py 文件"
+              "（注意：每个文件需 ≥50 个 token 才计入统计）。/ corpus empty or too few tokens (<2): "
+              "check --roots and that each .py file has ≥50 tokens.", flush=True)
+        sys.exit(1)
     seq_real, real_mean = eval_stat(all_tokens)
     pos_frac = sum(1 for x in seq_real if x > 0) / len(seq_real)
     fwd_all, bwd_all = build_counts(all_tokens)
     V = len({t for _, t in all_tokens})
     skew_real = skew_delta(fwd_all, bwd_all, N, V)
-    print(f"[corpus] depth={args.depth} files={n_files} parsed={n_files-n_parse_fail} "
-          f"skipped_fail={n_parse_fail}")
-    print(f"[corpus] tokens={N}  <D_asym>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
+    print(f"[corpus] <D_asym>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
           f"positive_frac={pos_frac:.4f}")
     print(f"[sign-check] sign(<D_asym>)={1 if real_mean > 0 else -1}, "
           f"sign(S(delta))={1 if skew_real > 0 else -1}, "
