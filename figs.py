@@ -139,7 +139,7 @@ def fig5():
     def X(x): return 50 + (x - x0) / (x1 - x0) * (W - 90)
     def Y(c): return 260 - c / ymax * 200
     s = svg_head(W, H)
-    s += text(W/2, 24, "Fig. 5  Permutation-test null distribution (shuffled symbols, author corpus, depth 5, 1000 permutations)", 14)
+    s += text(W/2, 24, "Fig. 5  Permutation-test null distribution (shuffled symbols, author dataset, depth 5, 1000 permutations)", 14)
     s += line(X(x0), Y(0), X(x1), Y(0), "#333", 1)
     for i in range(nbins):
         xc = lo + (i + 0.5) * bw
@@ -172,7 +172,7 @@ def fig6():
     s += text(X(0.315), Y(0) + 18, "<D_asym> (per-file mean)".replace("<", "&lt;").replace(">", "&gt;"), 11, color="#333", anchor="end")
     s += text(X(0.02), Y(40), "S(delta)", 12)
     s += text(X(0.04), Y(0) + 20, "<D_asym> = 0".replace("<", "&lt;").replace(">", "&gt;"), 10, color="#333", anchor="end")
-    s += text(160, 350, "red: Python author corpus (74); blue: Python stdlib (55); green: four C repos (168)", 12, color="#333")
+    s += text(160, 350, "red: Python author dataset (74); blue: Python stdlib (55); green: four C repos (168)", 12, color="#333")
     s += text(160, 368, "Python 129/129 satisfy &lt;D_asym&gt;&gt;0 and S(delta)&lt;0; C 146/168 (upper 22 points: noise floor / generated tables / zero-signal degeneracy, see Sec. 5.5)", 11, color="#c0392b")
     return s + svg_tail()
 

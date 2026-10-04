@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300">
 <rect width="640" height="300" fill="white"/>
-<text x="320.0" y="24" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="black" font-weight="normal">Fig. 5  Permutation-test null distribution (shuffled symbols, author corpus, depth 5, 1000 permutations)</text>
+<text x="320.0" y="24" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="middle" fill="black" font-weight="normal">Fig. 5  Permutation-test null distribution (shuffled symbols, author dataset, depth 5, 1000 permutations)</text>
 <line x1="50.0" y1="260.0" x2="600.0" y2="260.0" stroke="#333" stroke-width="1"/>
 <rect x="55.3" y="260.0" width="3.5" height="0.0" fill="#bcd3f2" stroke="none" stroke-width="1"/>
 <rect x="58.8" y="260.0" width="3.5" height="0.0" fill="#bcd3f2" stroke="none" stroke-width="1"/>
