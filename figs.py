@@ -149,7 +149,7 @@ def fig5():
     s += text(X(-0.01), 282, "-0.01", 12)
     s += text(50, 285, "null range [-0.008, +0.009], mean ~ 0", 11, color="#666")
     s += line(X(real), Y(0), X(real), 60, "#c0392b", 2, "6 4")
-    s += text(X(real) - 8, 48, f"true <D_asym> = {real:.3f}".replace("<", "&lt;").replace(">", "&gt;"), 13, color="#c0392b", anchor="end")
+    s += text(X(real) - 8, 48, f"true <DeltaS> = {real:.3f}".replace("<", "&lt;").replace(">", "&gt;"), 13, color="#c0392b", anchor="end")
     ratio = real / max(dist)
     s += text(W/2, 296, f"dashed line: true value; bars: null distribution over 1000 permutations [-0.008, +0.009]; ratio ~ {ratio:.1f}x (p = 0.001)", 11, color="#c0392b")
     return s + svg_tail()
@@ -163,17 +163,17 @@ def fig6():
     def X(x): return 70 + (x - X0) / (X1 - X0) * (W - 110)
     def Y(y): return 310 - (y - Y0) / (Y1 - Y0) * 260
     s = svg_head(W, H)
-    s += text(W/2, 24, "Fig. 6  Sign consistency: per-file (&lt;D_asym&gt;, S(delta)) scatter", 15)
+    s += text(W/2, 24, "Fig. 6  Per-file (&lt;DeltaS&gt;, S(delta)) scatter", 15)
     s += line(X(X0), Y(0), X(X1), Y(0), "#333", 1)
     s += line(X(0), Y(Y0), X(0), Y(Y1), "#333", 1)
     for dset, color in [(author, "#c0392b"), (stdlib, "#1e6091"), (ccorp, "#1e8449")]:
         for f in dset["per_file"]:
             s += f'<circle cx="{X(f["mean"]):.1f}" cy="{Y(f["skew"]):.1f}" r="3.5" fill="{color}" opacity="0.75"/>\n'
-    s += text(X(0.315), Y(0) + 18, "<D_asym> (per-file mean)".replace("<", "&lt;").replace(">", "&gt;"), 11, color="#333", anchor="end")
+    s += text(X(0.315), Y(0) + 18, "<DeltaS> (per-file mean)".replace("<", "&lt;").replace(">", "&gt;"), 11, color="#333", anchor="end")
     s += text(X(0.02), Y(40), "S(delta)", 12)
-    s += text(X(0.04), Y(0) + 20, "<D_asym> = 0".replace("<", "&lt;").replace(">", "&gt;"), 10, color="#333", anchor="end")
+    s += text(X(0.04), Y(0) + 20, "<DeltaS> = 0".replace("<", "&lt;").replace(">", "&gt;"), 10, color="#333", anchor="end")
     s += text(160, 350, "red: Python author dataset (74); blue: Python stdlib (55); green: four C repos (168)", 12, color="#333")
-    s += text(160, 368, "Python 129/129 satisfy &lt;D_asym&gt;&gt;0 and S(delta)&lt;0; C 146/168 (upper 22 points: noise floor / generated tables / zero-signal degeneracy, see Sec. 5.5)", 11, color="#c0392b")
+    s += text(160, 368, "Two independent empirical facts: &lt;DeltaS&gt;&gt;0 (directionality exists) and S(delta)&lt;0 (negative third-order skew); the test of Theorem 3 is reported in Sec. 5.5 (exact KL difference of the marginals, 129/129 Python files)", 11, color="#c0392b")
     return s + svg_tail()
 
 def main():
