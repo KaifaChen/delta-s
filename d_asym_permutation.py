@@ -31,6 +31,11 @@ import json
 import time
 import argparse
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 def leaf_symbol(node):
     if isinstance(node, ast.Name):
         return node.id

@@ -14,13 +14,13 @@ c_asym_permutation.py — §5.4 C 语料的同协议验证（tree-sitter C 口�
  4. ⟨D_asym⟩ 与 S(δ)（δ = 反向符号边际 − 正向符号边际）。
  5. 两类零假设置换检验（打乱符号 / 打乱路径），模型随置换重估。
 
-运行环境要求：tree-sitter（0.25.x）与 tree-sitter-c（0.25.x，胶囊 ABI 须匹配）；
+运行环境要求：tree-sitter（0.25/0.26）与 tree-sitter-c（0.25/0.26，胶囊 ABI 须匹配）；
 即论文 v1/v2 管线所用的环境。用法：
   python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> \
       --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
 
 c_asym_permutation.py — same-protocol verification on a C corpus in §5.4 (tree-sitter C protocol).
-Exactly the same protocol as the Python version d_asym_permutation.py: (1) tree-sitter parses C source and extracts the symbolic leaves in source order; token = (structural path p, symbol τ), where p = the chain of the nearest depth named ancestor node types and τ = an abstract symbol (identifier/field_identifier→id; type_identifier/primitive_type/sized_type_specifier→type; number_literal→num; string_literal→str; char_literal→char; keywords (return/if/…)→keyword name; operators (+, ==, …)→operator; ( ) , ; { } and comments are skipped). (2) Forward counts (p_i→τ_i) and backward counts (p_{i+1}→τ_i), add-1 smoothing. (3) D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}). (4) ⟨D_asym⟩ and S(δ) (δ = backward symbol marginal − forward symbol marginal). (5) Two null-hypothesis permutation tests (shuffle symbols / shuffle paths), with the model re-estimated after each permutation. Runtime requirements: tree-sitter (0.25.x) and tree-sitter-c (0.25.x, the capsule ABI must match), i.e. the environment used by the paper's v1/v2 pipeline. Usage: python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
+Exactly the same protocol as the Python version d_asym_permutation.py: (1) tree-sitter parses C source and extracts the symbolic leaves in source order; token = (structural path p, symbol τ), where p = the chain of the nearest depth named ancestor node types and τ = an abstract symbol (identifier/field_identifier→id; type_identifier/primitive_type/sized_type_specifier→type; number_literal→num; string_literal→str; char_literal→char; keywords (return/if/…)→keyword name; operators (+, ==, …)→operator; ( ) , ; { } and comments are skipped). (2) Forward counts (p_i→τ_i) and backward counts (p_{i+1}→τ_i), add-1 smoothing. (3) D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}). (4) ⟨D_asym⟩ and S(δ) (δ = backward symbol marginal − forward symbol marginal). (5) Two null-hypothesis permutation tests (shuffle symbols / shuffle paths), with the model re-estimated after each permutation. Runtime requirements: tree-sitter (0.25/0.26) and tree-sitter-c (0.25/0.26, the capsule ABI must match), i.e. the environment used by the paper's v1/v2 pipeline. Usage: python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
 """
 import argparse
 import json
@@ -29,6 +29,11 @@ import os
 import random
 import time
 import sys
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 from tree_sitter import Language, Parser
 import tree_sitter_c

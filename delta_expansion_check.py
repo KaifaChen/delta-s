@@ -15,6 +15,12 @@ Checks: (A) identity 4.7.1: D_asym = Σ(P+Q)log(P/Q) matches the difference of t
 """
 import math
 import random
+import sys
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 def kl(p, q):
     s = 0.0

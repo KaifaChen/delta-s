@@ -14,6 +14,12 @@ Checks: (A) drift formula: for the true phase φ0 versus the shifted phase ψ, t
 """
 import math
 import random
+import sys
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 def kl(p, q):
     """KL 散度（支持 p 的坐标上求和；q 元素为 0 且 p 元素 > 0 时视为 +inf）

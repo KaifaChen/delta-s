@@ -17,14 +17,18 @@ Chinese/English), it is UTF-8 encoded, and the Chinese print output is kept unch
 | `delta_expansion_check.py` | 数值验证 §4.7 差向量展开（恒等式 4.7.1、Bernoulli 例、收敛阶检查、ε-机混合例）/ Numerical check of the §4.7 difference-vector expansion (identity 4.7.1, the Bernoulli example, the convergence-order check, the ε-machine mixture example) | 仅标准库 / stdlib only |
 | `sync_check.py` | 数值验证 §3.6 桥接（命题 2/3：环上的双向同步性）/ Numerical check of the §3.6 bridge (Props. 2/3: two-way synchronization on a ring) | 仅标准库 / stdlib only |
 | `d_asym_permutation.py` | §5.4 置换检验实验（Python AST 结构路径口径；打乱符号 / 打乱路径两类零假设）/ §5.4 permutation-test experiment (Python-AST structural-path protocol; shuffle-symbols / shuffle-paths null hypotheses) | 仅标准库 / stdlib only |
-| `c_asym_permutation.py` | §5.4 C 语料的同协议验证（tree-sitter C 口径）/ §5.4 same-protocol verification on a C corpus (tree-sitter C protocol) | tree-sitter 0.26.x 与 tree-sitter-c 0.25/0.26 匹配的胶囊，在 WSL 或 Linux 下运行 / tree-sitter 0.26.x plus a matching tree-sitter-c 0.25/0.26 capsule; run under WSL or Linux |
-| `symbolic_check.py` | §4.6 六步推导的通用符号验证 / General symbolic verification of the six-step derivation in §4.6 | sympy；可设 PYTHONPATH 指向 `E:\LOGIC AI\.pypkgs` / sympy; optionally set PYTHONPATH to `E:\LOGIC AI\.pypkgs` |
+| `c_asym_permutation.py` | §5.4 C 语料的同协议验证（tree-sitter C 口径）/ §5.4 same-protocol verification on a C corpus (tree-sitter C protocol) | tree-sitter 与 tree-sitter-c（`pip install tree-sitter tree-sitter-c`，两包版本需匹配，见脚本注释；在 WSL 或 Linux 下运行）/ tree-sitter plus tree-sitter-c (`pip install tree-sitter tree-sitter-c`; the two packages' versions must match, see the script comments; run under WSL or Linux) |
+| `symbolic_check.py` | §4.6 六步推导的通用符号验证 / General symbolic verification of the six-step derivation in §4.6 | sympy（`pip install sympy`）/ sympy (`pip install sympy`) |
 | `figs.py` | 生成论文 6 张示意图（SVG；本仓库版图内文字为英文）/ Generates the paper's 6 schematic figures (SVG; the figure text in this repository version is English) | 仅标准库 / stdlib only |
 | `validate_svg.py` | 逐个检查 fig*.svg 是否为 well-formed XML / Checks each fig*.svg for well-formed XML | 仅标准库 / stdlib only |
 
 ## 用法示例 / Usage Examples
 
 ```bash
+# 安装外部依赖（仅两个脚本需要）/ install external dependencies (only two scripts need them)
+pip install sympy                        # symbolic_check.py
+pip install tree-sitter tree-sitter-c    # c_asym_permutation.py（WSL/Linux / under WSL or Linux）
+
 # 数值验证（仅标准库） / numerical checks (stdlib only)
 python delta_expansion_check.py
 python sync_check.py
@@ -47,14 +51,17 @@ python validate_svg.py
 
 `figs.py` 会读取同目录的 `perm_depth5.json`、`perm_stdlib.json`、`perm_c.json`，生成 6 张 SVG
 （fig1_sample_space.svg、fig2_phase_ambiguity.svg、fig3_three_state.svg、fig4_third_order.svg、
-fig5_perm_histogram.svg、fig6_sign_scatter.svg）。本仓库版脚本的 `OUT` 常量已改为脚本所在目录
-（作者原始脚本中指向其本地路径；这是相对原始脚本的唯一一处代码改动，并已在此注明）。
+fig5_perm_histogram.svg、fig6_sign_scatter.svg）。相对作者原始脚本，本仓库版有三类**已披露的移植性改动**，
+其余逐行等价：（1）`figs.py` 的 `OUT` 常量改为脚本所在目录；（2）`validate_svg.py` 校验脚本所在目录的
+fig*.svg（原版指向作者本地路径）；（3）全部脚本在启动时把标准输出切到 UTF-8（原版依赖终端环境）。
 
 `figs.py` reads `perm_depth5.json`, `perm_stdlib.json` and `perm_c.json` from the same directory and generates
 the 6 SVGs (fig1_sample_space.svg, fig2_phase_ambiguity.svg, fig3_three_state.svg, fig4_third_order.svg,
-fig5_perm_histogram.svg, fig6_sign_scatter.svg). In this repository version, the `OUT` constant has been changed
-to the script's own directory (the author's original script points to his local path; this is the only code change
-relative to the original scripts, and it is disclosed here).
+fig5_perm_histogram.svg, fig6_sign_scatter.svg). Relative to the author's original scripts, this repository
+version contains three **disclosed portability changes** and is otherwise line-for-line equivalent:
+(1) `figs.py`'s `OUT` constant points at the script's own directory; (2) `validate_svg.py` validates the
+fig*.svg files in the script's own directory (the original pointed at the author's local path); (3) every script
+switches stdout to UTF-8 at startup (the originals relied on the terminal environment).
 
 ## 数据依赖说明 / Data Dependencies
 

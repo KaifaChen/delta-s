@@ -11,7 +11,13 @@ symbolic_check.py — §4.6 六步推导的通用符号验证（sympy）
 symbolic_check.py — general symbolic verification of the six-step derivation in §4.6 (sympy).
 Verifies, on the 2-parameter 3-symbol family P = (θ1, θ2, 1−θ1−θ2): (1) the third-order Bartlett identity S_ijk = T_ijk + B_ijk + B_jik + B_kij; (2) the constraint identity B_kij = S_ijk − ∂_k g_ij (from ∂_k E[∂i∂j l] = −∂_k g_ij); (3) the six-step conclusion (working-draft identity (5)): S_ijk = ½(∂_i g_jk + ∂_j g_ik + ∂_k g_ij − T_ijk). (Requires sympy; the runtime PYTHONPATH includes E:\\LOGIC AI\\.pypkgs)
 """
+import sys
 import sympy as sp
+
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 
 t1, t2 = sp.symbols("t1 t2", positive=True)
 P = [t1, t2, 1 - t1 - t2]

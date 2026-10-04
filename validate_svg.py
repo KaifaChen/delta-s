@@ -3,9 +3,19 @@
 
 validate_svg.py — checks each fig*.svg for well-formed XML and locates the offending line."""
 import glob
+import os
+import sys
 import xml.etree.ElementTree as ET
 
-for f in sorted(glob.glob(r"E:\LOGIC AI\logic papers\DELTA S\fig*.svg")):
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
+# 校验脚本所在目录下的 fig*.svg（第三方克隆后即指克隆目录）
+# Validates fig*.svg in the script's own directory (i.e., the clone directory for third parties).
+HERE = os.path.dirname(os.path.abspath(__file__))
+for f in sorted(glob.glob(os.path.join(HERE, "fig*.svg"))):
     try:
         ET.parse(f)
         print("OK   ", f)
