@@ -48,6 +48,17 @@ leading order): testing Theorem 3 with the sign of ⟨ΔS⟩ is invalid. The scr
 the exact KL difference between the forward/backward symbol marginals (no expansion) versus the third-order
 prediction −(1/6)Σδ³/P_f² — which depends only on the symbol marginals and is therefore depth-independent.
 
+**关于作者语料的快照性 / On the author-corpus snapshot**：作者数据集是采集时的快照，其文件清单即
+`files_author_d5.txt`（由 `perm_depth5.json` 提取）。该目录含作者在用的脚本，脚本一经编辑，同一清单重跑的
+token 数会有千分之几的漂移；`perm_*.json` 与论文 §5.5 的数字对应采集时的状态，`valid_*.json` 为脚本更新后
+在**同一清单**上重跑的结果（两者差异仅来自被编辑过的少数文件，结论不变）。
+
+The author corpus is a snapshot; its file list is `files_author_d5.txt` (extracted from `perm_depth5.json`). The
+directory contains scripts the author is still editing, so re-running the same list later shifts the token count by
+a few tenths of a percent. The `perm_*.json` files and the paper's §5.5 numbers correspond to the collection-time
+state, while `valid_*.json` records a re-run of the **same list** after the scripts were updated (the difference
+comes only from the few edited files and does not change any conclusion).
+
 ## 文件清单 / File List
 
 | 脚本 / Script | 功能 / Purpose | 依赖 / Dependencies |
