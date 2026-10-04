@@ -1,0 +1,521 @@
+{
+ "depth": 5,
+ "real_mean": 0.2115458773943205,
+ "real_mean_note": "mean per-token log-ratio; estimates DeltaS = D_KL(P_f||P_b) >= 0, NOT D_asym",
+ "skew_delta": -23.917400875064487,
+ "dasym_marginal_real": 1.5245515112083533e-10,
+ "dasym_marginal_third_order": 1.5122885065507752e-10,
+ "n_files_dasym_sign_agree": 55,
+ "n_files_third_order_sign_agree": 55,
+ "positive_frac": 0.5204973915105525,
+ "n_tokens": 67473,
+ "n_files": 55,
+ "n_parse_fail": 0,
+ "null_a_mean": NaN,
+ "null_b_mean": NaN,
+ "p_two_sided_a": NaN,
+ "p_two_sided_b": NaN,
+ "p_one_sided_a": NaN,
+ "p_one_sided_b": NaN,
+ "null_a_dist": [],
+ "null_b_dist": [],
+ "nperm": 0,
+ "seed": 20260929,
+ "per_file": [
+  {
+   "file": "C:\\Python314\\Lib\\__future__.py",
+   "tokens": 178,
+   "mean": 0.15937598647259554,
+   "skew": -8.186238009832312,
+   "pos_frac": 0.6497175141242938,
+   "dasym_marginal": 0.00012585006336198205,
+   "dasym_third_order": 8.56579930463674e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_aix_support.py",
+   "tokens": 130,
+   "mean": 0.06539362635605216,
+   "skew": -5.0533517230016285,
+   "pos_frac": 0.3953488372093023,
+   "dasym_marginal": 2.9407431243168194e-05,
+   "dasym_third_order": 2.4721826446841693e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_android_support.py",
+   "tokens": 216,
+   "mean": 0.1068490374623636,
+   "skew": -5.592859303430574,
+   "pos_frac": 0.4418604651162791,
+   "dasym_marginal": 9.986247903096477e-06,
+   "dasym_third_order": 8.783794709407558e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_apple_support.py",
+   "tokens": 74,
+   "mean": 0.09020911259659077,
+   "skew": -3.155821687978545,
+   "pos_frac": 0.410958904109589,
+   "dasym_marginal": 2.2939511887268824e-05,
+   "dasym_third_order": 2.028201587247732e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_ast_unparse.py",
+   "tokens": 1881,
+   "mean": 0.2761209072990367,
+   "skew": -1.9553540120159967,
+   "pos_frac": 0.6191489361702127,
+   "dasym_marginal": 4.972362245009643e-10,
+   "dasym_third_order": 4.958260938690776e-10
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_collections_abc.py",
+   "tokens": 1361,
+   "mean": 0.2184214188893136,
+   "skew": -19.58960419080898,
+   "pos_frac": 0.49779411764705883,
+   "dasym_marginal": 8.846839491111466e-06,
+   "dasym_third_order": 6.6942949606540085e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_colorize.py",
+   "tokens": 493,
+   "mean": 0.08263485944307271,
+   "skew": -12.63946922857985,
+   "pos_frac": 0.37398373983739835,
+   "dasym_marginal": 2.0836555120762934e-05,
+   "dasym_third_order": 1.577988924290698e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_compat_pickle.py",
+   "tokens": 452,
+   "mean": 0.08051989923165223,
+   "skew": -6.016050825918043,
+   "pos_frac": 0.9113082039911308,
+   "dasym_marginal": 2.493121214693459e-06,
+   "dasym_third_order": 2.2917543591323743e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_ios_support.py",
+   "tokens": 88,
+   "mean": 0.0863227805706126,
+   "skew": -6.002192581838214,
+   "pos_frac": 0.5057471264367817,
+   "dasym_marginal": 0.00021983157676264348,
+   "dasym_third_order": 0.00015012744816652316
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_markupbase.py",
+   "tokens": 848,
+   "mean": 0.0826521981944229,
+   "skew": -2.2970613890139853,
+   "pos_frac": 0.38016528925619836,
+   "dasym_marginal": 1.0298670247916564e-08,
+   "dasym_third_order": 1.021466792594574e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_opcode_metadata.py",
+   "tokens": 584,
+   "mean": 0.026204758345939886,
+   "skew": -0.3753046579084428,
+   "pos_frac": 0.8507718696397941,
+   "dasym_marginal": 5.363456591867216e-10,
+   "dasym_third_order": 5.330318645274532e-10
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_osx_support.py",
+   "tokens": 781,
+   "mean": 0.07049961440805189,
+   "skew": -7.50225493688814,
+   "pos_frac": 0.39871794871794874,
+   "dasym_marginal": 8.496005951117279e-07,
+   "dasym_third_order": 7.942037450431024e-07
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_py_abc.py",
+   "tokens": 203,
+   "mean": 0.07575019528320191,
+   "skew": -4.2092177568158435,
+   "pos_frac": 0.38613861386138615,
+   "dasym_marginal": 4.40943952292083e-06,
+   "dasym_third_order": 4.060274719219781e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_py_warnings.py",
+   "tokens": 1188,
+   "mean": 0.09988190703232344,
+   "skew": -11.423989984668752,
+   "pos_frac": 0.44397641112047176,
+   "dasym_marginal": 1.3566948467867905e-06,
+   "dasym_third_order": 1.2232715968730825e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_pydatetime.py",
+   "tokens": 4807,
+   "mean": 0.1422813645339276,
+   "skew": -13.178044824097308,
+   "pos_frac": 0.45110278818143984,
+   "dasym_marginal": 3.939809343438683e-08,
+   "dasym_third_order": 3.8051556101083595e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_pydecimal.py",
+   "tokens": 8423,
+   "mean": 0.1698976005874693,
+   "skew": -38.260083841245454,
+   "pos_frac": 0.4918071716931845,
+   "dasym_marginal": 6.280064160287375e-07,
+   "dasym_third_order": 5.251381146933359e-07
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_pyio.py",
+   "tokens": 3420,
+   "mean": 0.25531760002726434,
+   "skew": -2.7608538250111496,
+   "pos_frac": 0.5033635565954958,
+   "dasym_marginal": 2.765135048083465e-10,
+   "dasym_third_order": 2.7578558394005404e-10
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_pylong.py",
+   "tokens": 959,
+   "mean": 0.027125680763550646,
+   "skew": -10.344523880388431,
+   "pos_frac": 0.302713987473904,
+   "dasym_marginal": 1.6390729258815894e-06,
+   "dasym_third_order": 1.4781071771430863e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_sitebuiltins.py",
+   "tokens": 80,
+   "mean": 0.10401700427025924,
+   "skew": -7.315601001832873,
+   "pos_frac": 0.4050632911392405,
+   "dasym_marginal": 0.0006790109689768021,
+   "dasym_third_order": 0.00035882621742893594
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_strptime.py",
+   "tokens": 1660,
+   "mean": 0.0835683713659226,
+   "skew": -11.747644140726386,
+   "pos_frac": 0.46714888487040385,
+   "dasym_marginal": 5.707784030412361e-07,
+   "dasym_third_order": 5.274911498933569e-07
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_threading_local.py",
+   "tokens": 145,
+   "mean": 0.04152737460370986,
+   "skew": -5.294651389216603,
+   "pos_frac": 0.3333333333333333,
+   "dasym_marginal": 2.725291506745569e-05,
+   "dasym_third_order": 2.2900914062345736e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\_weakrefset.py",
+   "tokens": 188,
+   "mean": 0.07403104441750803,
+   "skew": -10.747488573536508,
+   "pos_frac": 0.39037433155080214,
+   "dasym_marginal": 0.0003297354012287646,
+   "dasym_third_order": 0.00017357074704976323
+  },
+  {
+   "file": "C:\\Python314\\Lib\\abc.py",
+   "tokens": 133,
+   "mean": 0.12051236503371276,
+   "skew": -9.274231161469034,
+   "pos_frac": 0.44696969696969696,
+   "dasym_marginal": 0.0004366208974525675,
+   "dasym_third_order": 0.0002301075536411184
+  },
+  {
+   "file": "C:\\Python314\\Lib\\annotationlib.py",
+   "tokens": 1592,
+   "mean": 0.08368520059083734,
+   "skew": -12.199998490474822,
+   "pos_frac": 0.4110622250157134,
+   "dasym_marginal": 6.79597464578241e-07,
+   "dasym_third_order": 6.237702854191454e-07
+  },
+  {
+   "file": "C:\\Python314\\Lib\\argparse.py",
+   "tokens": 4080,
+   "mean": 0.1191582298038346,
+   "skew": -16.042343872579014,
+   "pos_frac": 0.44471684236332437,
+   "dasym_marginal": 1.3686306724226368e-07,
+   "dasym_third_order": 1.2888830490276952e-07
+  },
+  {
+   "file": "C:\\Python314\\Lib\\ast.py",
+   "tokens": 1074,
+   "mean": 0.06282476993436485,
+   "skew": -25.06993390583275,
+   "pos_frac": 0.3560111835973905,
+   "dasym_marginal": 6.270673227080203e-05,
+   "dasym_third_order": 3.2911790529330484e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\base64.py",
+   "tokens": 1049,
+   "mean": 0.0782579797686424,
+   "skew": -24.494931335473602,
+   "pos_frac": 0.37404580152671757,
+   "dasym_marginal": 6.56609631064996e-05,
+   "dasym_third_order": 3.446343582314802e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\bdb.py",
+   "tokens": 1519,
+   "mean": 0.2408834375071395,
+   "skew": -2.802242691589003,
+   "pos_frac": 0.5289855072463768,
+   "dasym_marginal": 3.038094828178127e-09,
+   "dasym_third_order": 3.0202255377472195e-09
+  },
+  {
+   "file": "C:\\Python314\\Lib\\bisect.py",
+   "tokens": 170,
+   "mean": 0.09110165147992093,
+   "skew": -9.618242147637064,
+   "pos_frac": 0.33136094674556216,
+   "dasym_marginal": 0.0004075169436047543,
+   "dasym_third_order": 0.00021469966467415076
+  },
+  {
+   "file": "C:\\Python314\\Lib\\bz2.py",
+   "tokens": 353,
+   "mean": 0.1651920906715959,
+   "skew": -8.967281412018362,
+   "pos_frac": 0.5085227272727273,
+   "dasym_marginal": 1.9270145303033098e-05,
+   "dasym_third_order": 1.552817347993475e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\cProfile.py",
+   "tokens": 274,
+   "mean": 0.03732140550858286,
+   "skew": -13.191121325277164,
+   "pos_frac": 0.326007326007326,
+   "dasym_marginal": 0.0002219631115486382,
+   "dasym_third_order": 0.00011670120757180772
+  },
+  {
+   "file": "C:\\Python314\\Lib\\calendar.py",
+   "tokens": 1739,
+   "mean": 0.11471460641531896,
+   "skew": -31.072512508513537,
+   "pos_frac": 0.42750287686996546,
+   "dasym_marginal": 4.0930889124296327e-05,
+   "dasym_third_order": 2.147758877203671e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\cmd.py",
+   "tokens": 604,
+   "mean": 0.08499844992319999,
+   "skew": -8.210627821421571,
+   "pos_frac": 0.3482587064676617,
+   "dasym_marginal": 2.5239357782979757e-06,
+   "dasym_third_order": 2.2771851694433035e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\code.py",
+   "tokens": 380,
+   "mean": 0.13325536087268317,
+   "skew": -7.349684152591664,
+   "pos_frac": 0.43535620052770446,
+   "dasym_marginal": 6.2040013854860695e-06,
+   "dasym_third_order": 5.449608154595461e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\codecs.py",
+   "tokens": 909,
+   "mean": 0.21909653656266395,
+   "skew": -18.59219037620311,
+   "pos_frac": 0.5308370044052864,
+   "dasym_marginal": 2.5951164068270345e-05,
+   "dasym_third_order": 1.760252689537854e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\codeop.py",
+   "tokens": 138,
+   "mean": 0.025133306912026775,
+   "skew": -3.2702680177727896,
+   "pos_frac": 0.24817518248175183,
+   "dasym_marginal": 4.825206497282566e-06,
+   "dasym_third_order": 4.479657772033031e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\colorsys.py",
+   "tokens": 450,
+   "mean": 0.06461784123597819,
+   "skew": -6.798584182605003,
+   "pos_frac": 0.38530066815144765,
+   "dasym_marginal": 3.5483144111973547e-06,
+   "dasym_third_order": 3.2032682572738617e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\compileall.py",
+   "tokens": 762,
+   "mean": 0.09250740428010244,
+   "skew": -17.107602413308136,
+   "pos_frac": 0.3679369250985545,
+   "dasym_marginal": 3.056659288022326e-05,
+   "dasym_third_order": 2.0736394568127916e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\configparser.py",
+   "tokens": 1914,
+   "mean": 0.14104371410286232,
+   "skew": -2.1055548553831596,
+   "pos_frac": 0.46941975953998955,
+   "dasym_marginal": 5.780999118868806e-10,
+   "dasym_third_order": 5.763406532054274e-10
+  },
+  {
+   "file": "C:\\Python314\\Lib\\contextlib.py",
+   "tokens": 642,
+   "mean": 0.16149607106921382,
+   "skew": -2.3854658302292657,
+   "pos_frac": 0.46957878315132606,
+   "dasym_marginal": 2.1025996457165868e-08,
+   "dasym_third_order": 2.0805698009590492e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\copy.py",
+   "tokens": 434,
+   "mean": 0.07804029314879689,
+   "skew": -15.921806238436798,
+   "pos_frac": 0.37644341801385683,
+   "dasym_marginal": 0.00015369101382511446,
+   "dasym_third_order": 8.074535677830377e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\copyreg.py",
+   "tokens": 296,
+   "mean": 0.05458727867733887,
+   "skew": -8.331506802628237,
+   "pos_frac": 0.4,
+   "dasym_marginal": 2.2090988119062783e-05,
+   "dasym_third_order": 1.7807297518777455e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\csv.py",
+   "tokens": 783,
+   "mean": 0.024916123651467472,
+   "skew": -3.460513193229006,
+   "pos_frac": 0.3248081841432225,
+   "dasym_marginal": 3.860783732761063e-08,
+   "dasym_third_order": 3.802397540378552e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\dataclasses.py",
+   "tokens": 2052,
+   "mean": 0.06282466641472984,
+   "skew": -23.979193754216492,
+   "pos_frac": 0.41004388103364214,
+   "dasym_marginal": 5.932226585320903e-06,
+   "dasym_third_order": 4.487941732210515e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\difflib.py",
+   "tokens": 2489,
+   "mean": 0.07953361950789431,
+   "skew": -3.482991888033171,
+   "pos_frac": 0.3721864951768489,
+   "dasym_marginal": 1.4711347653243475e-09,
+   "dasym_third_order": 1.4635900480205631e-09
+  },
+  {
+   "file": "C:\\Python314\\Lib\\dis.py",
+   "tokens": 2269,
+   "mean": 0.07236537323042432,
+   "skew": -35.81900024023728,
+   "pos_frac": 0.3628747795414462,
+   "dasym_marginal": 3.084068450802501e-05,
+   "dasym_third_order": 1.6181197961184754e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\doctest.py",
+   "tokens": 3141,
+   "mean": 0.10148367226701278,
+   "skew": -41.653338109991445,
+   "pos_frac": 0.4442675159235669,
+   "dasym_marginal": 2.2828902851030787e-05,
+   "dasym_third_order": 1.1976608744576205e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\enum.py",
+   "tokens": 3601,
+   "mean": 0.11608556598268913,
+   "skew": -44.073807576281325,
+   "pos_frac": 0.4197222222222222,
+   "dasym_marginal": 2.039647423086787e-05,
+   "dasym_third_order": 1.0700213374240378e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\filecmp.py",
+   "tokens": 415,
+   "mean": 0.1277015475639147,
+   "skew": -15.984488840596253,
+   "pos_frac": 0.4927536231884058,
+   "dasym_marginal": 0.0001525108634225111,
+   "dasym_third_order": 8.012429985200464e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\fileinput.py",
+   "tokens": 521,
+   "mean": 0.08809733487602386,
+   "skew": -17.11734178634372,
+   "pos_frac": 0.4673076923076923,
+   "dasym_marginal": 0.00013331636099054382,
+   "dasym_third_order": 7.002540888068778e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\fnmatch.py",
+   "tokens": 398,
+   "mean": 0.041810094163086266,
+   "skew": -2.2979120995464775,
+   "pos_frac": 0.37279596977329976,
+   "dasym_marginal": 7.48014590895983e-08,
+   "dasym_third_order": 7.362384908420986e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\fractions.py",
+   "tokens": 1697,
+   "mean": 0.11364518678439021,
+   "skew": -5.271404668215358,
+   "pos_frac": 0.4115566037735849,
+   "dasym_marginal": 2.1980391830423774e-08,
+   "dasym_third_order": 2.163174136781232e-08
+  },
+  {
+   "file": "C:\\Python314\\Lib\\ftplib.py",
+   "tokens": 1490,
+   "mean": 0.12940365161333683,
+   "skew": -23.359548210418104,
+   "pos_frac": 0.4513096037609134,
+   "dasym_marginal": 1.653142627367342e-05,
+   "dasym_third_order": 1.120959559054849e-05
+  },
+  {
+   "file": "C:\\Python314\\Lib\\functools.py",
+   "tokens": 1734,
+   "mean": 0.0701756280401777,
+   "skew": -19.839418534973902,
+   "pos_frac": 0.3958453548759377,
+   "dasym_marginal": 4.154233967066767e-06,
+   "dasym_third_order": 3.3415746146384404e-06
+  },
+  {
+   "file": "C:\\Python314\\Lib\\genericpath.py",
+   "tokens": 212,
+   "mean": 0.14544765155860523,
+   "skew": -11.402086465098204,
+   "pos_frac": 0.44549763033175355,
+   "dasym_marginal": 0.0002943170835492166,
+   "dasym_third_order": 0.00015486609751674197
+  }
+ ]
+}

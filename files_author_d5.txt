@@ -1,0 +1,74 @@
+E:\LOGIC AI\结合点与方向性\脚本\2d_transient_check.py
+E:\LOGIC AI\结合点与方向性\脚本\alpha1_exact_wz_check.py
+E:\LOGIC AI\结合点与方向性\脚本\anchor_alignment_check.py
+E:\LOGIC AI\结合点与方向性\脚本\anchoring_transport_check.py
+E:\LOGIC AI\结合点与方向性\脚本\causal_rectification_chain.py
+E:\LOGIC AI\结合点与方向性\脚本\covariant_fd_convergence.py
+E:\LOGIC AI\结合点与方向性\脚本\cqac_dictionary.py
+E:\LOGIC AI\结合点与方向性\脚本\cqac_dictionary_d3.py
+E:\LOGIC AI\结合点与方向性\脚本\cqac_dictionary_v2.py
+E:\LOGIC AI\结合点与方向性\脚本\dark_energy_joint_check.py
+E:\LOGIC AI\结合点与方向性\脚本\epsilon_machine_Tijk.py
+E:\LOGIC AI\结合点与方向性\脚本\frame_theorem_general.py
+E:\LOGIC AI\结合点与方向性\脚本\gauge_emergence_check.py
+E:\LOGIC AI\结合点与方向性\脚本\kane_mele_sumrule.py
+E:\LOGIC AI\结合点与方向性\脚本\lambda_reading_check.py
+E:\LOGIC AI\结合点与方向性\脚本\logic_invisible_direction_check.py
+E:\LOGIC AI\结合点与方向性\脚本\lorentz_signature_check.py
+E:\LOGIC AI\结合点与方向性\脚本\m5_pinning_check.py
+E:\LOGIC AI\结合点与方向性\脚本\order_structure_n4_check.py
+E:\LOGIC AI\结合点与方向性\脚本\orthogonality_preservation.py
+E:\LOGIC AI\结合点与方向性\脚本\quantum_skew_tensor_d.py
+E:\LOGIC AI\结合点与方向性\脚本\real_data_scan.py
+E:\LOGIC AI\结合点与方向性\脚本\real_data_scan_v2.py
+E:\LOGIC AI\结合点与方向性\脚本\relative_transport_check.py
+E:\LOGIC AI\结合点与方向性\脚本\s0_adjudication_check.py
+E:\LOGIC AI\结合点与方向性\脚本\semantic_locality_check.py
+E:\LOGIC AI\结合点与方向性\脚本\statistical_frame_theorem.py
+E:\LOGIC AI\结合点与方向性\脚本\third_order_closure.py
+E:\LOGIC AI\结合点与方向性\脚本\verify_qlf_v2_audit.py
+E:\LOGIC AI\结合点与方向性\脚本\verify_triple_projection.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\aggregate_v2.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\analyze_one.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\ci_check.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\code_quality_v2.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\extract_commits.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\patch_modified.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\pool_prospective.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\project_score.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\prospective.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\sensitivity_q.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\sensitivity_z.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\md2html.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\aggregate_v2.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\analyze_one.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\ci_check.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\code_quality_v2.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\extract_commits.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\patch_modified.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\pool_prospective.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\project_score.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\prospective.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\sensitivity_q.py
+E:\LOGIC AI\代码逻辑流质量评测工具验证报告\v2\Zenodo_v2.1\software logic evaluation\scripts\sensitivity_z.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_code\verify_c_named.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_code\verify_c_named_hetero.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_code\verify_cpp_named.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_code\verify_java_named.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_code\verify_python.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h1_dna\verify_fantom5_real_seq.py
+E:\LOGIC AI\锚对齐假说验证\logic-convergence-verification\scripts\h2_h4_simulation\verify_h2_defect.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\clang_verify_v3.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\code_verify_v3.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\dna_shared_v2_verify.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\dna_shared_verify_v3.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\dna_verify_v3.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\fetch_data.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\formalize_v21.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\formalize_v21_en.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\make_v21.py
+E:\LOGIC AI\锚对齐假说验证\验证_v3.0新理论\脚本\make_v21_en.py
+E:\LOGIC AI\logic papers\DELTA S\d_asym_permutation.py
+E:\LOGIC AI\logic papers\DELTA S\delta_expansion_check.py
+E:\LOGIC AI\logic papers\DELTA S\symbolic_check.py
+E:\LOGIC AI\logic papers\DELTA S\sync_check.py

@@ -1,0 +1,692 @@
+{
+ "depth": 3,
+ "real_mean": 0.20313668655227882,
+ "real_mean_note": "mean per-token log-ratio; estimates DeltaS = D_KL(P_f||P_b) >= 0, NOT D_asym",
+ "skew_delta": -30.919266547596585,
+ "dasym_marginal_real": 2.395434753330381e-09,
+ "dasym_marginal_third_order": 2.3385941095182763e-09,
+ "n_files_dasym_sign_agree": 74,
+ "n_files_third_order_sign_agree": 74,
+ "positive_frac": 0.5370773134482937,
+ "n_tokens": 38623,
+ "n_files": 74,
+ "n_parse_fail": 0,
+ "null_a_mean": NaN,
+ "null_b_mean": NaN,
+ "p_two_sided_a": NaN,
+ "p_two_sided_b": NaN,
+ "p_one_sided_a": NaN,
+ "p_one_sided_b": NaN,
+ "null_a_dist": [],
+ "null_b_dist": [],
+ "nperm": 0,
+ "seed": 20260929,
+ "per_file": [
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\2d_transient_check.py",
+   "tokens": 207,
+   "mean": 0.13018214883926285,
+   "skew": -1.8022263459344496,
+   "pos_frac": 0.5,
+   "dasym_marginal": 2.4897959118193574e-07,
+   "dasym_third_order": 2.4352526422357174e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\alpha1_exact_wz_check.py",
+   "tokens": 723,
+   "mean": 0.07424275655319525,
+   "skew": -3.780957749657973,
+   "pos_frac": 0.4445983379501385,
+   "dasym_marginal": 7.94448665851663e-08,
+   "dasym_third_order": 7.784756435199104e-08
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\anchor_alignment_check.py",
+   "tokens": 353,
+   "mean": 0.14655446109360254,
+   "skew": -14.335439277437874,
+   "pos_frac": 0.48011363636363635,
+   "dasym_marginal": 0.00018874301812233654,
+   "dasym_third_order": 9.919891334270925e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\anchoring_transport_check.py",
+   "tokens": 643,
+   "mean": 0.13745357406954037,
+   "skew": -18.98691019151586,
+   "pos_frac": 0.48286604361370716,
+   "dasym_marginal": 0.00010869258786622312,
+   "dasym_third_order": 5.707621957676287e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\causal_rectification_chain.py",
+   "tokens": 206,
+   "mean": 0.19551749025247395,
+   "skew": -1.7425093973214512,
+   "pos_frac": 0.5121951219512195,
+   "dasym_marginal": 2.3360019087514494e-07,
+   "dasym_third_order": 2.286204144291125e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\covariant_fd_convergence.py",
+   "tokens": 529,
+   "mean": 0.16162313250736904,
+   "skew": -14.035847859165054,
+   "pos_frac": 0.49053030303030304,
+   "dasym_marginal": 4.501804401558056e-05,
+   "dasym_third_order": 3.0555299790692706e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\cqac_dictionary.py",
+   "tokens": 629,
+   "mean": 0.12116184549800361,
+   "skew": -1.3274719780800674,
+   "pos_frac": 0.39490445859872614,
+   "dasym_marginal": 4.2550854180426536e-09,
+   "dasym_third_order": 4.231436323657584e-09
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\cqac_dictionary_d3.py",
+   "tokens": 723,
+   "mean": 0.10730988058559925,
+   "skew": -14.10691231717193,
+   "pos_frac": 0.4626038781163435,
+   "dasym_marginal": 1.683825667452942e-05,
+   "dasym_third_order": 1.2748356464284287e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\cqac_dictionary_v2.py",
+   "tokens": 583,
+   "mean": 0.12178243705438047,
+   "skew": -1.8616447464839174,
+   "pos_frac": 0.4415807560137457,
+   "dasym_marginal": 1.3310555747419973e-08,
+   "dasym_third_order": 1.3199229384379369e-08
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\dark_energy_joint_check.py",
+   "tokens": 480,
+   "mean": 0.11599370511491691,
+   "skew": -2.5325255317287727,
+   "pos_frac": 0.4759916492693111,
+   "dasym_marginal": 6.576243166054769e-08,
+   "dasym_third_order": 6.473384136920116e-08
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\epsilon_machine_Tijk.py",
+   "tokens": 727,
+   "mean": 0.1309784379279297,
+   "skew": -5.762832806392023,
+   "pos_frac": 0.47796143250688705,
+   "dasym_marginal": 4.1729691044201083e-07,
+   "dasym_third_order": 3.9889703046659395e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\frame_theorem_general.py",
+   "tokens": 334,
+   "mean": 0.1640778883157806,
+   "skew": -4.9535578980220505,
+   "pos_frac": 0.4744744744744745,
+   "dasym_marginal": 2.135591550480562e-06,
+   "dasym_third_order": 1.989029071949148e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\gauge_emergence_check.py",
+   "tokens": 371,
+   "mean": 0.11656422981155493,
+   "skew": -14.748035659322772,
+   "pos_frac": 0.4972972972972973,
+   "dasym_marginal": 0.00017856206058418573,
+   "dasym_third_order": 9.383755556599051e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\kane_mele_sumrule.py",
+   "tokens": 1009,
+   "mean": 0.1702465771712028,
+   "skew": -19.382190652871653,
+   "pos_frac": 0.49206349206349204,
+   "dasym_marginal": 2.3907762212585115e-05,
+   "dasym_third_order": 1.6215375456649535e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\lambda_reading_check.py",
+   "tokens": 132,
+   "mean": 0.2354197960345905,
+   "skew": -1.124803176664623,
+   "pos_frac": 0.5725190839694656,
+   "dasym_marginal": 2.729250144619191e-07,
+   "dasym_third_order": 2.667809940609831e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\logic_invisible_direction_check.py",
+   "tokens": 860,
+   "mean": 0.12689766293998295,
+   "skew": -22.056791404982498,
+   "pos_frac": 0.4458672875436554,
+   "dasym_marginal": 8.082546941900394e-05,
+   "dasym_third_order": 4.2429837974492276e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\lorentz_signature_check.py",
+   "tokens": 247,
+   "mean": 0.08289463866034555,
+   "skew": -5.023620676950276,
+   "pos_frac": 0.3821138211382114,
+   "dasym_marginal": 5.921378453630508e-06,
+   "dasym_third_order": 5.353033795698028e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\m5_pinning_check.py",
+   "tokens": 266,
+   "mean": 0.2018511761164629,
+   "skew": -0.7234041898230614,
+   "pos_frac": 0.5094339622641509,
+   "dasym_marginal": 1.4015782459815291e-08,
+   "dasym_third_order": 1.3872944414993795e-08
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\order_structure_n4_check.py",
+   "tokens": 2993,
+   "mean": 0.16874431503223541,
+   "skew": -40.03124558700505,
+   "pos_frac": 0.5220588235294118,
+   "dasym_marginal": 2.4710676189942898e-05,
+   "dasym_third_order": 1.2964098977508305e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\orthogonality_preservation.py",
+   "tokens": 434,
+   "mean": 0.1785208228832421,
+   "skew": -12.780429637552492,
+   "pos_frac": 0.4942263279445728,
+   "dasym_marginal": 5.4002455023946184e-05,
+   "dasym_third_order": 3.666458787113988e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\quantum_skew_tensor_d.py",
+   "tokens": 1115,
+   "mean": 0.1478919850834678,
+   "skew": -17.33503117346845,
+   "pos_frac": 0.4829443447037702,
+   "dasym_marginal": 1.1253565569088678e-05,
+   "dasym_third_order": 8.516850863382978e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\real_data_scan.py",
+   "tokens": 457,
+   "mean": 0.08779207479824705,
+   "skew": -6.78386566297811,
+   "pos_frac": 0.4342105263157895,
+   "dasym_marginal": 2.6488962447156824e-06,
+   "dasym_third_order": 2.4145767691308497e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\real_data_scan_v2.py",
+   "tokens": 556,
+   "mean": 0.10298889017744117,
+   "skew": -3.6660661001141874,
+   "pos_frac": 0.42702702702702705,
+   "dasym_marginal": 1.3486267102295034e-07,
+   "dasym_third_order": 1.3168565930584037e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\relative_transport_check.py",
+   "tokens": 465,
+   "mean": 0.08349631604676673,
+   "skew": -16.718359740054336,
+   "pos_frac": 0.40086206896551724,
+   "dasym_marginal": 0.00013964340419613677,
+   "dasym_third_order": 7.335381446022274e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\s0_adjudication_check.py",
+   "tokens": 139,
+   "mean": 0.107893659298113,
+   "skew": -1.3646989048047153,
+   "pos_frac": 0.42028985507246375,
+   "dasym_marginal": 3.5840503481444344e-07,
+   "dasym_third_order": 3.497718570161099e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\semantic_locality_check.py",
+   "tokens": 282,
+   "mean": 0.03475174383734196,
+   "skew": -12.903717864170032,
+   "pos_frac": 0.29537366548042704,
+   "dasym_marginal": 0.00023167140567759267,
+   "dasym_third_order": 0.0001218185330446402
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\statistical_frame_theorem.py",
+   "tokens": 402,
+   "mean": 0.22428550181912418,
+   "skew": -3.4456441731722687,
+   "pos_frac": 0.5211970074812967,
+   "dasym_marginal": 3.495451935597987e-07,
+   "dasym_third_order": 3.3863093285219217e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\third_order_closure.py",
+   "tokens": 1253,
+   "mean": 0.14261571461991332,
+   "skew": -1.5901288310795698,
+   "pos_frac": 0.5079872204472844,
+   "dasym_marginal": 9.412144152486549e-10,
+   "dasym_third_order": 9.380333119756392e-10
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\verify_qlf_v2_audit.py",
+   "tokens": 142,
+   "mean": 0.2990698407017201,
+   "skew": -2.1469688008935375,
+   "pos_frac": 0.5886524822695035,
+   "dasym_marginal": 1.4121148097080791e-06,
+   "dasym_third_order": 1.354909117305012e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\结合点与方向性\\脚本\\verify_triple_projection.py",
+   "tokens": 341,
+   "mean": 0.2194460972214458,
+   "skew": -2.6480860164582714,
+   "pos_frac": 0.5441176470588235,
+   "dasym_marginal": 1.9457535112913426e-07,
+   "dasym_third_order": 1.90140468941943e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\aggregate_v2.py",
+   "tokens": 656,
+   "mean": 0.14662682252176693,
+   "skew": -19.377890726459952,
+   "pos_frac": 0.4732824427480916,
+   "dasym_marginal": 0.00010440717905601995,
+   "dasym_third_order": 5.4823315901795655e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\analyze_one.py",
+   "tokens": 315,
+   "mean": 0.03381789265821033,
+   "skew": -13.892628556364992,
+   "pos_frac": 0.34076433121019106,
+   "dasym_marginal": 0.00020066053423833005,
+   "dasym_third_order": 0.0001054762834694607
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\ci_check.py",
+   "tokens": 234,
+   "mean": 0.15194628745161531,
+   "skew": -11.662214471394856,
+   "pos_frac": 0.5107296137339056,
+   "dasym_marginal": 0.0002817917490566867,
+   "dasym_third_order": 0.0001482549135729373
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\code_quality_v2.py",
+   "tokens": 2197,
+   "mean": 0.06380897845971224,
+   "skew": -35.092745841573304,
+   "pos_frac": 0.4517304189435337,
+   "dasym_marginal": 3.2125258731976167e-05,
+   "dasym_third_order": 1.6855411719764185e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\extract_commits.py",
+   "tokens": 91,
+   "mean": 0.09915202932784116,
+   "skew": -7.517785180297045,
+   "pos_frac": 0.4222222222222222,
+   "dasym_marginal": 0.0006459238034694061,
+   "dasym_third_order": 0.00034121368299582715
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\patch_modified.py",
+   "tokens": 107,
+   "mean": 0.06915401749993622,
+   "skew": -8.277329545038254,
+   "pos_frac": 0.4528301886792453,
+   "dasym_marginal": 0.0005405390173418663,
+   "dasym_third_order": 0.00028520533037542853
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\pool_prospective.py",
+   "tokens": 250,
+   "mean": 0.055789713088793165,
+   "skew": -12.288471668507531,
+   "pos_frac": 0.37751004016064255,
+   "dasym_marginal": 0.0002546933508998011,
+   "dasym_third_order": 0.00013395799601188108
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\project_score.py",
+   "tokens": 987,
+   "mean": 0.062483734060490854,
+   "skew": -23.832787381797463,
+   "pos_frac": 0.3752535496957404,
+   "dasym_marginal": 6.932825251668917e-05,
+   "dasym_third_order": 3.638973881101549e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\prospective.py",
+   "tokens": 288,
+   "mean": 0.04822238663576445,
+   "skew": -13.360596549787926,
+   "pos_frac": 0.3832752613240418,
+   "dasym_marginal": 0.00021651906921494807,
+   "dasym_third_order": 0.00011383208670777811
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\sensitivity_q.py",
+   "tokens": 387,
+   "mean": 0.02769385354181326,
+   "skew": -15.411170473567035,
+   "pos_frac": 0.3238341968911917,
+   "dasym_marginal": 0.00016383307739463408,
+   "dasym_third_order": 8.608330620659724e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\sensitivity_z.py",
+   "tokens": 388,
+   "mean": 0.06961203394594254,
+   "skew": -9.497939038917051,
+   "pos_frac": 0.4315245478036176,
+   "dasym_marginal": 1.7301456141380014e-05,
+   "dasym_third_order": 1.3938487512385668e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\md2html.py",
+   "tokens": 263,
+   "mean": 0.12710221695756801,
+   "skew": -8.55939770290789,
+   "pos_frac": 0.45038167938931295,
+   "dasym_marginal": 4.369705657998019e-05,
+   "dasym_third_order": 3.3145987408764956e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\aggregate_v2.py",
+   "tokens": 656,
+   "mean": 0.14662682252176693,
+   "skew": -19.377890726459952,
+   "pos_frac": 0.4732824427480916,
+   "dasym_marginal": 0.00010440717905601995,
+   "dasym_third_order": 5.4823315901795655e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\analyze_one.py",
+   "tokens": 315,
+   "mean": 0.03381789265821033,
+   "skew": -13.892628556364992,
+   "pos_frac": 0.34076433121019106,
+   "dasym_marginal": 0.00020066053423833005,
+   "dasym_third_order": 0.0001054762834694607
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\ci_check.py",
+   "tokens": 234,
+   "mean": 0.15194628745161531,
+   "skew": -11.662214471394856,
+   "pos_frac": 0.5107296137339056,
+   "dasym_marginal": 0.0002817917490566867,
+   "dasym_third_order": 0.0001482549135729373
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\code_quality_v2.py",
+   "tokens": 2197,
+   "mean": 0.06380897845971224,
+   "skew": -35.092745841573304,
+   "pos_frac": 0.4517304189435337,
+   "dasym_marginal": 3.2125258731976167e-05,
+   "dasym_third_order": 1.6855411719764185e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\extract_commits.py",
+   "tokens": 91,
+   "mean": 0.09915202932784116,
+   "skew": -7.517785180297045,
+   "pos_frac": 0.4222222222222222,
+   "dasym_marginal": 0.0006459238034694061,
+   "dasym_third_order": 0.00034121368299582715
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\patch_modified.py",
+   "tokens": 107,
+   "mean": 0.06915401749993622,
+   "skew": -8.277329545038254,
+   "pos_frac": 0.4528301886792453,
+   "dasym_marginal": 0.0005405390173418663,
+   "dasym_third_order": 0.00028520533037542853
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\pool_prospective.py",
+   "tokens": 250,
+   "mean": 0.055789713088793165,
+   "skew": -12.288471668507531,
+   "pos_frac": 0.37751004016064255,
+   "dasym_marginal": 0.0002546933508998011,
+   "dasym_third_order": 0.00013395799601188108
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\project_score.py",
+   "tokens": 987,
+   "mean": 0.062483734060490854,
+   "skew": -23.832787381797463,
+   "pos_frac": 0.3752535496957404,
+   "dasym_marginal": 6.932825251668917e-05,
+   "dasym_third_order": 3.638973881101549e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\prospective.py",
+   "tokens": 288,
+   "mean": 0.04822238663576445,
+   "skew": -13.360596549787926,
+   "pos_frac": 0.3832752613240418,
+   "dasym_marginal": 0.00021651906921494807,
+   "dasym_third_order": 0.00011383208670777811
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\sensitivity_q.py",
+   "tokens": 387,
+   "mean": 0.02769385354181326,
+   "skew": -15.411170473567035,
+   "pos_frac": 0.3238341968911917,
+   "dasym_marginal": 0.00016383307739463408,
+   "dasym_third_order": 8.608330620659724e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\代码逻辑流质量评测工具验证报告\\v2\\Zenodo_v2.1\\software logic evaluation\\scripts\\sensitivity_z.py",
+   "tokens": 388,
+   "mean": 0.06961203394594254,
+   "skew": -9.497939038917051,
+   "pos_frac": 0.4315245478036176,
+   "dasym_marginal": 1.7301456141380014e-05,
+   "dasym_third_order": 1.3938487512385668e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_code\\verify_c_named.py",
+   "tokens": 473,
+   "mean": 0.09192306882724921,
+   "skew": -16.852403285688826,
+   "pos_frac": 0.4385593220338983,
+   "dasym_marginal": 0.0001374687043239692,
+   "dasym_third_order": 7.220973926586013e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_code\\verify_c_named_hetero.py",
+   "tokens": 473,
+   "mean": 0.09192306882724921,
+   "skew": -16.852403285688826,
+   "pos_frac": 0.4385593220338983,
+   "dasym_marginal": 0.0001374687043239692,
+   "dasym_third_order": 7.220973926586013e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_code\\verify_cpp_named.py",
+   "tokens": 474,
+   "mean": 0.09413038076723955,
+   "skew": -16.867231260684047,
+   "pos_frac": 0.44608879492600423,
+   "dasym_marginal": 0.0001372312447191791,
+   "dasym_third_order": 7.208481883364752e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_code\\verify_java_named.py",
+   "tokens": 472,
+   "mean": 0.09850335905750639,
+   "skew": -16.822708128358247,
+   "pos_frac": 0.445859872611465,
+   "dasym_marginal": 0.00013794609732739575,
+   "dasym_third_order": 7.246088349068258e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_code\\verify_python.py",
+   "tokens": 449,
+   "mean": 0.08504765932138707,
+   "skew": -16.477368003025546,
+   "pos_frac": 0.421875,
+   "dasym_marginal": 0.00014368433561769495,
+   "dasym_third_order": 7.547982966879046e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h1_dna\\verify_fantom5_real_seq.py",
+   "tokens": 482,
+   "mean": 0.1728212491147138,
+   "skew": -1.276206484235732,
+   "pos_frac": 0.45114345114345117,
+   "dasym_marginal": 7.170207279567182e-09,
+   "dasym_third_order": 7.122676065197984e-09
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\logic-convergence-verification\\scripts\\h2_h4_simulation\\verify_h2_defect.py",
+   "tokens": 88,
+   "mean": 0.19163372333029582,
+   "skew": -1.3585673322225869,
+   "pos_frac": 0.5172413793103449,
+   "dasym_marginal": 1.4081882169516245e-06,
+   "dasym_third_order": 1.3550612423597632e-06
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\clang_verify_v3.py",
+   "tokens": 635,
+   "mean": 0.05011162787940872,
+   "skew": -19.659668715483836,
+   "pos_frac": 0.3801261829652997,
+   "dasym_marginal": 0.00010147327300074286,
+   "dasym_third_order": 5.328103942674919e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\code_verify_v3.py",
+   "tokens": 957,
+   "mean": 0.04694080917696437,
+   "skew": -24.07284195292393,
+   "pos_frac": 0.37447698744769875,
+   "dasym_marginal": 6.796409299129387e-05,
+   "dasym_third_order": 3.567317397176572e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\dna_shared_v2_verify.py",
+   "tokens": 681,
+   "mean": 0.0798727462059534,
+   "skew": -20.124672842122333,
+   "pos_frac": 0.4308823529411765,
+   "dasym_marginal": 9.689404005297489e-05,
+   "dasym_third_order": 5.0874056292521034e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\dna_shared_verify_v3.py",
+   "tokens": 748,
+   "mean": 0.05105239049720309,
+   "skew": -20.86869151897852,
+   "pos_frac": 0.4069611780455154,
+   "dasym_marginal": 9.018436397525029e-05,
+   "dasym_third_order": 4.734768357024101e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\dna_verify_v3.py",
+   "tokens": 549,
+   "mean": 0.03611381896786287,
+   "skew": -18.479797380062145,
+   "pos_frac": 0.3759124087591241,
+   "dasym_marginal": 0.00011465346643395539,
+   "dasym_third_order": 6.02102945976848e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\fetch_data.py",
+   "tokens": 236,
+   "mean": 0.1613416196588186,
+   "skew": -12.000285384734312,
+   "pos_frac": 0.46808510638297873,
+   "dasym_marginal": 0.0002666603353967804,
+   "dasym_third_order": 0.0001402706296849943
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\formalize_v21.py",
+   "tokens": 86,
+   "mean": 0.07935837145292984,
+   "skew": -0.2771326538627217,
+   "pos_frac": 0.611764705882353,
+   "dasym_marginal": 7.086121910261515e-08,
+   "dasym_third_order": 6.784772728282355e-08
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\formalize_v21_en.py",
+   "tokens": 84,
+   "mean": 0.08963859262066846,
+   "skew": -0.5272196186749817,
+   "pos_frac": 0.5662650602409639,
+   "dasym_marginal": 1.9228087753833754e-07,
+   "dasym_third_order": 1.864106655299653e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\make_v21.py",
+   "tokens": 110,
+   "mean": 0.11336081011193415,
+   "skew": -5.318181818181823,
+   "pos_frac": 0.6146788990825688,
+   "dasym_marginal": 0.00010153306389094202,
+   "dasym_third_order": 7.734548080796218e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\锚对齐假说验证\\验证_v3.0新理论\\脚本\\make_v21_en.py",
+   "tokens": 97,
+   "mean": 0.06956488174072961,
+   "skew": -0.7483047685595082,
+   "pos_frac": 0.46875,
+   "dasym_marginal": 2.45800008417214e-07,
+   "dasym_third_order": 2.395071796630214e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\logic papers\\DELTA S\\d_asym_permutation.py",
+   "tokens": 855,
+   "mean": 0.08976339709445735,
+   "skew": -22.37190179778547,
+   "pos_frac": 0.4098360655737705,
+   "dasym_marginal": 7.858674101490487e-05,
+   "dasym_third_order": 4.1253595973338076e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\logic papers\\DELTA S\\delta_expansion_check.py",
+   "tokens": 418,
+   "mean": 0.1411421545297311,
+   "skew": -15.280845731977692,
+   "pos_frac": 0.45083932853717024,
+   "dasym_marginal": 0.00016658123553661613,
+   "dasym_third_order": 8.75299161093637e-05
+  },
+  {
+   "file": "E:\\LOGIC AI\\logic papers\\DELTA S\\symbolic_check.py",
+   "tokens": 292,
+   "mean": 0.1575119396326421,
+   "skew": -3.1512806016871022,
+   "pos_frac": 0.4570446735395189,
+   "dasym_marginal": 6.013991090645667e-07,
+   "dasym_third_order": 5.799214571396328e-07
+  },
+  {
+   "file": "E:\\LOGIC AI\\logic papers\\DELTA S\\sync_check.py",
+   "tokens": 300,
+   "mean": 0.09275972179169291,
+   "skew": -13.435232765086502,
+   "pos_frac": 0.3612040133779264,
+   "dasym_marginal": 0.0002141842806095439,
+   "dasym_third_order": 0.00011260171148278522
+  }
+ ]
+}

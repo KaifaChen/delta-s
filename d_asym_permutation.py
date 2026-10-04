@@ -7,20 +7,25 @@ d_asym_permutation.py — §5.4 置换检验实验（Python AST 结构路径口�
     每个 token 记 (结构路径 p, 符号 τ)：p = 祖先节点类型链（深度 ≤ depth）。
  2. 正向计数 P_f(τ|p)：位置 i 的路径 p_i 预测符号 τ_i；
     反向计数 P_b(τ|p')：下一位置路径 p_{i+1} 预测当前符号 τ_i；add-1 平滑。
- 3. 逐 token 不对称差 D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1})。
- 4. 全局 ⟨D_asym⟩ = 均值；另报方向性偏斜 S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2}，
-    其中 δ = 反向符号边际 − 正向符号边际（§4.7 差向量展开的归一化三阶量，
-    理论预期 sign(⟨D_asym⟩) = −sign(S(δ))，见工作稿 §4.7/§4.8）。
- 5. 两类零假设置换检验（模型随置换重估）：
+ 3. 逐 token 对数比 log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1})；
+    其经验均值 ⟨DeltaS⟩ 是**局部不可逆度 ΔS = D_KL(P_f∥P_b) ≥ 0** 的估计
+    （注意：不是定理 3 的对象 D_asym = D_KL(P_f∥P_b) − D_KL(P_b∥P_f)，两者不是同一个量）。
+ 4. 另报方向性偏斜 S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2}，δ = 反向符号边际 − 正向符号边际。
+ 5. **定理 3 的检验**：对同一对边际分布直接计算精确 KL 差
+    D_asym(marginal) = Σ_τ P_f log(P_f/P_b) − Σ_τ P_b log(P_b/P_f)（无展开），
+    与三阶预言 −(1/6)Σδ³/P_f² 及 S(δ) 的符号关系一并输出。
+ 6. 两类零假设置换检验（模型随置换重估）：
     (a) 打乱符号序列 τ（路径顺序保留）；
     (b) 打乱路径序列 p（符号顺序保留）。
     自检：置换分布的均值应 ≈ 0。
 用法：
   python d_asym_permutation.py --roots <dir...> [--depth 5] [--nperm 1000]
         [--maxfiles 0] [--seed 20260929] [--out result.json]
+  python d_asym_permutation.py --filelist files.txt --depth 5 --nperm 0 --out result.json
+        （--filelist 用于精确复现既有结果：文件清单每行一个路径）
 
 d_asym_permutation.py — the §5.4 permutation-test experiment (Python-AST structural-path protocol).
-Protocol (per working draft §5.2; pure standard library, reproducible): (1) parse Python source with ast and extract the symbolic leaves (Name/Constant/keyword/operator) in source order; each token is recorded as (structural path p, symbol τ), where p = the chain of ancestor node types (depth ≤ depth). (2) Forward counts P_f(τ|p): the path p_i at position i predicts the symbol τ_i; backward counts P_b(τ|p'): the path p_{i+1} at the next position predicts the current symbol τ_i; add-1 smoothing. (3) Per-token asymmetry D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}). (4) Global ⟨D_asym⟩ = mean; also report the directional skew S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2}, where δ = backward symbol marginal − forward symbol marginal (the normalized third-order quantity of the §4.7 difference-vector expansion; theory predicts sign(⟨D_asym⟩) = −sign(S(δ)), see working draft §4.7/§4.8). (5) Two null-hypothesis permutation tests (the model is re-estimated after each permutation): (a) shuffle the symbol sequence τ (path order preserved); (b) shuffle the path sequence p (symbol order preserved). Self-check: the means of the permutation distributions should be ≈ 0. Usage: python d_asym_permutation.py --roots <dir...> [--depth 5] [--nperm 1000] [--maxfiles 0] [--seed 20260929] [--out result.json]
+Protocol (per working draft §5.2; pure standard library, reproducible): (1) parse Python source with ast and extract the symbolic leaves (Name/Constant/keyword/operator) in source order; each token is recorded as (structural path p, symbol τ), where p = the chain of ancestor node types (depth ≤ depth). (2) Forward counts P_f(τ|p): the path p_i at position i predicts the symbol τ_i; backward counts P_b(τ|p'): the path p_{i+1} at the next position predicts the current symbol τ_i; add-1 smoothing. (3) Per-token log-ratio log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}); its empirical mean ⟨DeltaS⟩ estimates the local irreversibility ΔS = D_KL(P_f∥P_b) ≥ 0 (NOT the object of Theorem 3, D_asym). (4) Also reported: the directional skew S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2} with δ = backward symbol marginal − forward symbol marginal. (5) The test of Theorem 3: the exact KL difference between the same two marginals, Σ P_f log(P_f/P_b) − Σ P_b log(P_b/P_f) (no expansion), together with the third-order prediction −(1/6)Σδ³/P_f² and the sign relations. (6) Two null-hypothesis permutation tests (the model is re-estimated after each permutation): (a) shuffle the symbol sequence τ (path order preserved); (b) shuffle the path sequence p (symbol order preserved). Self-check: the means of the permutation distributions should be ≈ 0. Usage: python d_asym_permutation.py --roots <dir...> [--depth 5] [--nperm 1000] [--maxfiles 0] [--seed 20260929] [--out result.json]; or --filelist files.txt for exact reproduction of an existing file set.
 """
 import ast
 import os
@@ -130,6 +135,33 @@ def skew_delta(fwd, bwd, n, v):
         den += d * d / pf
     return num / (den ** 1.5) if den > 0 else 0.0
 
+def marginals(fwd, bwd, n, v, alpha=1.0):
+    """正/反向符号边际分布（alpha 平滑）/ forward & backward symbol marginals (alpha smoothing)."""
+    f, b = {}, {}
+    for (p, t), c in fwd.items():
+        f[t] = f.get(t, 0) + c
+    for (p, t), c in bwd.items():
+        b[t] = b.get(t, 0) + c
+    n_b = max(n - 1, 1)
+    syms = sorted(set(f) | set(b))
+    pf = {t: (f.get(t, 0) + alpha) / (n + alpha * v) for t in syms}
+    pb = {t: (b.get(t, 0) + alpha) / (n_b + alpha * v) for t in syms}
+    return pf, pb
+
+def dasym_marginal(fwd, bwd, n, v, alpha=1.0):
+    """定理 3 的对象：正反向符号边际分布之间的精确 KL 差，以及其三阶预言。
+    The object of Theorem 3: the exact KL difference between the forward/backward symbol marginals,
+    together with its third-order prediction −(1/6)Σδ³/P_f².  Returns (exact, third_order).
+
+    注意：逐 token 对数比 log P_f − log P_b 的均值估计的是 ΔS = D_KL(P_f∥P_b) ≥ 0，
+    不是这里的 D_asym（两者不是同一个量；见 README）。
+    Note: the mean per-token log-ratio estimates ΔS = D_KL(P_f∥P_b) ≥ 0, which is NOT this D_asym.
+    """
+    pf, pb = marginals(fwd, bwd, n, v, alpha)
+    exact = sum(pf[t] * math.log(pf[t] / pb[t]) - pb[t] * math.log(pb[t] / pf[t]) for t in pf)
+    third = -sum((pb[t] - pf[t]) ** 3 / pf[t] ** 2 for t in pf) / 6.0
+    return exact, third
+
 def permute_symbols(tokens, rng):
     ts = [t for _, t in tokens]
     rng.shuffle(ts)
@@ -164,13 +196,19 @@ def iter_files(roots, maxfiles=0):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--roots", nargs="+", required=True)
+    ap.add_argument("--roots", nargs="+", default=None,
+                    help="待扫描目录 / directories to scan")
+    ap.add_argument("--filelist", default=None,
+                    help="改为从文本文件读取文件清单（每行一个路径），用于精确复现既有结果 / "
+                         "read the file list from a text file (one path per line) for exact reproduction")
     ap.add_argument("--depth", type=int, default=5)
     ap.add_argument("--nperm", type=int, default=1000)
     ap.add_argument("--maxfiles", type=int, default=0)
     ap.add_argument("--seed", type=int, default=20260929)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
+    if not args.roots and not args.filelist:
+        ap.error("需要 --roots 或 --filelist / either --roots or --filelist is required")
 
     t0 = time.time()
     rng = random.Random(args.seed)
@@ -179,7 +217,12 @@ def main():
     all_tokens = []
     n_parse_fail = 0
     n_files = 0
-    for fp in iter_files(args.roots, args.maxfiles):
+    if args.filelist:
+        with open(args.filelist, encoding="utf-8") as fl:
+            file_iter = [ln.strip() for ln in fl if ln.strip()]
+    else:
+        file_iter = list(iter_files(args.roots, args.maxfiles))
+    for fp in file_iter:
         n_files += 1
         try:
             with open(fp, "r", encoding="utf-8-sig", errors="replace") as f:
@@ -194,8 +237,9 @@ def main():
         fwd, bwd = build_counts(toks)
         v = len({t for _, t in toks})
         sk = skew_delta(fwd, bwd, len(toks), v)
+        dasym_ex, dasym_3rd = dasym_marginal(fwd, bwd, len(toks), v)
         per_file.append((fp, len(toks), mean, sk,
-                         sum(1 for x in seq if x > 0) / len(seq)))
+                         sum(1 for x in seq if x > 0) / len(seq), dasym_ex, dasym_3rd))
         all_tokens.extend(toks)
 
     N = len(all_tokens)
@@ -211,11 +255,19 @@ def main():
     fwd_all, bwd_all = build_counts(all_tokens)
     V = len({t for _, t in all_tokens})
     skew_real = skew_delta(fwd_all, bwd_all, N, V)
-    print(f"[corpus] <D_asym>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
+    dasym_real, dasym_3rd_real = dasym_marginal(fwd_all, bwd_all, N, V)
+    print(f"[corpus] <DeltaS>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
           f"positive_frac={pos_frac:.4f}")
-    print(f"[sign-check] sign(<D_asym>)={1 if real_mean > 0 else -1}, "
-          f"sign(S(delta))={1 if skew_real > 0 else -1}, "
-          f"预期相反: {'OK' if real_mean * skew_real < 0 else 'FAIL'}")
+    print(f"[corpus] D_asym(marginal, exact)={dasym_real:.4e}  "
+          f"third-order={dasym_3rd_real:.4e}  S(delta)={skew_real:.6f}")
+    print(f"[note] <DeltaS> 估计 ΔS = D_KL(P_f∥P_b) ≥ 0，不是定理 3 的对象；"
+          f"定理 3 的检验见下一行的 D_asym(marginal)。", flush=True)
+
+    n_marg = len(per_file)
+    n_marg_agree = sum(1 for r in per_file if r[5] * r[3] < 0)
+    n_third_agree = sum(1 for r in per_file if r[6] * r[3] < 0)
+    print(f"[third-order] 逐文件 sign(D_asym) = -sign(S(delta)): {n_marg_agree}/{n_marg}；"
+          f"sign(三阶预言) = -sign(S(delta)): {n_third_agree}/{n_marg}")
 
     # 置换检验 / Permutation tests
     dist_a = []
@@ -239,38 +291,50 @@ def main():
             return p1
         return min(1.0, 2.0 * min(p1, p2))
 
-    mean_a = sum(dist_a) / len(dist_a)
-    mean_b = sum(dist_b) / len(dist_b)
-    print(f"[null-a 打乱符号]  null mean={mean_a:.6f}  p(单侧)={pval(dist_a, real_mean, two_sided=False):.4f}  p(双侧)={pval(dist_a, real_mean):.4f}")
-    print(f"[null-b 打乱路径]  null mean={mean_b:.6f}  p(单侧)={pval(dist_b, real_mean, two_sided=False):.4f}  p(双侧)={pval(dist_b, real_mean):.4f}")
-    print(f"[self-check] null-a mean={abs(mean_a):.2e};  null-b mean={abs(mean_b):.2e}  (应≈0)")
+    if dist_a:
+        mean_a = sum(dist_a) / len(dist_a)
+        mean_b = sum(dist_b) / len(dist_b)
+        p_a1 = pval(dist_a, real_mean, two_sided=False)
+        p_b1 = pval(dist_b, real_mean, two_sided=False)
+        p_a2 = pval(dist_a, real_mean)
+        p_b2 = pval(dist_b, real_mean)
+        print(f"[null-a 打乱符号]  null mean={mean_a:.6f}  p(单侧)={p_a1:.4f}  p(双侧)={p_a2:.4f}")
+        print(f"[null-b 打乱路径]  null mean={mean_b:.6f}  p(单侧)={p_b1:.4f}  p(双侧)={p_b2:.4f}")
+        print(f"[self-check] null-a mean={abs(mean_a):.2e};  null-b mean={abs(mean_b):.2e}  (应≈0)")
+    else:
+        mean_a = mean_b = p_a1 = p_b1 = p_a2 = p_b2 = float("nan")
+        print("[null-*] --nperm 0：跳过置换检验（仅计算 ⟨DeltaS⟩、S(δ) 与 D_asym(marginal)）")
 
-    pos_files = sum(1 for _, _, m, _, _ in per_file if m > 0)
-    sign_agree = sum(1 for _, _, m, sk, _ in per_file if m * sk < 0)
-    print(f"[per-file] 文件数={len(per_file)}  ⟨D_asym⟩>0 文件数={pos_files}  "
-          f"符号一致性(⟨D_asym⟩与−S(δ)同号)={sign_agree}/{len(per_file)}")
+    pos_files = sum(1 for r in per_file if r[2] > 0)
+    print(f"[per-file] 文件数={len(per_file)}  ⟨DeltaS⟩>0 文件数={pos_files}  "
+          f"（注意：⟨DeltaS⟩ 恒非负，此行不是定理 3 的检验）")
 
     out = {
         "depth": args.depth,
         "real_mean": real_mean,
+        "real_mean_note": "mean per-token log-ratio; estimates DeltaS = D_KL(P_f||P_b) >= 0, NOT D_asym",
         "skew_delta": skew_real,
-        "sign_check_ok": real_mean * skew_real < 0,
+        "dasym_marginal_real": dasym_real,
+        "dasym_marginal_third_order": dasym_3rd_real,
+        "n_files_dasym_sign_agree": n_marg_agree,
+        "n_files_third_order_sign_agree": n_third_agree,
         "positive_frac": pos_frac,
         "n_tokens": N,
         "n_files": n_files,
         "n_parse_fail": n_parse_fail,
         "null_a_mean": mean_a,
         "null_b_mean": mean_b,
-        "p_two_sided_a": pval(dist_a, real_mean),
-        "p_two_sided_b": pval(dist_b, real_mean),
-        "p_one_sided_a": pval(dist_a, real_mean, two_sided=False),
-        "p_one_sided_b": pval(dist_b, real_mean, two_sided=False),
+        "p_two_sided_a": p_a2,
+        "p_two_sided_b": p_b2,
+        "p_one_sided_a": p_a1,
+        "p_one_sided_b": p_b1,
         "null_a_dist": dist_a,
         "null_b_dist": dist_b,
         "nperm": args.nperm,
         "seed": args.seed,
-        "per_file": [{"file": fp, "tokens": n, "mean": m, "skew": sk, "pos_frac": pf}
-                     for fp, n, m, sk, pf in per_file],
+        "per_file": [{"file": fp, "tokens": n, "mean": m, "skew": sk, "pos_frac": pf,
+                      "dasym_marginal": dax, "dasym_third_order": d3}
+                     for fp, n, m, sk, pf, dax, d3 in per_file],
     }
     if args.out:
         with open(args.out, "w", encoding="utf-8") as f:

@@ -10,8 +10,12 @@ c_asym_permutation.py — §5.4 C 语料的同协议验证（tree-sitter C 口�
     char_literal→char；关键字（return/if/…）→关键字名；算符（+、==、…）→算符；
     跳过 ( ) , ; { } 与注释）。
  2. 正向计数 (p_i→τ_i)、反向计数 (p_{i+1}→τ_i)，add-1 平滑。
- 3. D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1})。
- 4. ⟨D_asym⟩ 与 S(δ)（δ = 反向符号边际 − 正向符号边际）。
+ 3. 逐 token 对数比 log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1})；
+    其经验均值 ⟨DeltaS⟩ 估计**局部不可逆度 ΔS = D_KL(P_f∥P_b) ≥ 0**
+    （不是定理 3 的对象 D_asym = D_KL(P_f∥P_b) − D_KL(P_b∥P_f)）。
+ 4. S(δ)（δ = 反向符号边际 − 正向符号边际）与 **定理 3 的检验**：
+    对同一对边际直接计算精确 KL 差 D_asym(marginal)（无展开）及三阶预言 −(1/6)Σδ³/P_f²；
+    该检验只依赖符号边际，因此与路径深度无关。
  5. 两类零假设置换检验（打乱符号 / 打乱路径），模型随置换重估。
 
 运行环境要求：tree-sitter（0.25/0.26）与 tree-sitter-c（0.25/0.26，胶囊 ABI 须匹配）；
@@ -139,6 +143,34 @@ def skew_delta(fwd, bwd, n, v):
         den += d * d / pf
     return num / (den ** 1.5) if den > 0 else 0.0
 
+def marginals(fwd, bwd, n, v, alpha=1.0):
+    """正/反向符号边际分布（alpha 平滑）/ forward & backward symbol marginals (alpha smoothing)."""
+    f, b = {}, {}
+    for (p, t), c in fwd.items():
+        f[t] = f.get(t, 0) + c
+    for (p, t), c in bwd.items():
+        b[t] = b.get(t, 0) + c
+    n_b = max(n - 1, 1)
+    syms = sorted(set(f) | set(b))
+    pf = {t: (f.get(t, 0) + alpha) / (n + alpha * v) for t in syms}
+    pb = {t: (b.get(t, 0) + alpha) / (n_b + alpha * v) for t in syms}
+    return pf, pb
+
+def dasym_marginal(fwd, bwd, n, v, alpha=1.0):
+    """定理 3 的对象：正反向符号边际分布之间的精确 KL 差，以及其三阶预言。
+    The object of Theorem 3: the exact KL difference between the forward/backward symbol marginals,
+    together with its third-order prediction −(1/6)Σδ³/P_f².  Returns (exact, third_order).
+
+    注意：逐 token 对数比 log P_f − log P_b 的均值估计的是 ΔS = D_KL(P_f∥P_b) ≥ 0，
+    不是这里的 D_asym。注意该检验只依赖符号边际，因此与路径深度无关。
+    Note: the mean per-token log-ratio estimates ΔS = D_KL(P_f∥P_b) ≥ 0, which is NOT this D_asym.
+    The marginal-based test depends only on symbol marginals, hence is depth-independent.
+    """
+    pf, pb = marginals(fwd, bwd, n, v, alpha)
+    exact = sum(pf[t] * math.log(pf[t] / pb[t]) - pb[t] * math.log(pb[t] / pf[t]) for t in pf)
+    third = -sum((pb[t] - pf[t]) ** 3 / pf[t] ** 2 for t in pf) / 6.0
+    return exact, third
+
 def permute_symbols(tokens, rng):
     ts = [t for _, t in tokens]
     rng.shuffle(ts)
@@ -173,7 +205,9 @@ def iter_files(roots, maxfiles=0):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--roots", nargs="+", required=True)
+    ap.add_argument("--roots", nargs="+", default=None)
+    ap.add_argument("--filelist", default=None,
+                    help="改为从文本文件读取文件清单（每行一个路径）/ read the file list from a text file")
     ap.add_argument("--depth", type=int, default=5)
     ap.add_argument("--nperm", type=int, default=1000)
     ap.add_argument("--maxfiles", type=int, default=0,
@@ -181,6 +215,8 @@ def main():
     ap.add_argument("--seed", type=int, default=20260929)
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
+    if not args.roots and not args.filelist:
+        ap.error("需要 --roots 或 --filelist / either --roots or --filelist is required")
 
     t0 = time.time()
     parser = build_parser()
@@ -191,7 +227,12 @@ def main():
     all_tokens = []
     n_parse_fail = n_files = 0
     parse_errors = []
-    for fp in iter_files(args.roots, args.maxfiles):
+    if args.filelist:
+        with open(args.filelist, encoding="utf-8") as fl:
+            file_iter = [ln.strip() for ln in fl if ln.strip()]
+    else:
+        file_iter = list(iter_files(args.roots, args.maxfiles))
+    for fp in file_iter:
         n_files += 1
         try:
             with open(fp, "rb") as f:
@@ -210,8 +251,9 @@ def main():
         fwd, bwd = build_counts(toks)
         v = len({t for _, t in toks})
         sk = skew_delta(fwd, bwd, len(toks), v)
+        dasym_ex, dasym_3rd = dasym_marginal(fwd, bwd, len(toks), v)
         per_file.append((fp, len(toks), mean, sk,
-                         sum(1 for x in seq if x > 0) / len(seq)))
+                         sum(1 for x in seq if x > 0) / len(seq), dasym_ex, dasym_3rd))
         all_tokens.extend(toks)
     for pe in parse_errors:
         print(f"[parse-error] {pe}", flush=True)
@@ -229,11 +271,18 @@ def main():
     fwd_all, bwd_all = build_counts(all_tokens)
     V = len({t for _, t in all_tokens})
     skew_real = skew_delta(fwd_all, bwd_all, N, V)
-    print(f"[corpus] <D_asym>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
+    dasym_real, dasym_3rd_real = dasym_marginal(fwd_all, bwd_all, N, V)
+    print(f"[corpus] <DeltaS>={real_mean:.6f}  S(delta)={skew_real:.6f}  "
           f"positive_frac={pos_frac:.4f}")
-    print(f"[sign-check] sign(<D_asym>)={1 if real_mean > 0 else -1}, "
-          f"sign(S(delta))={1 if skew_real > 0 else -1}, "
-          f"预期相反: {'OK' if real_mean * skew_real < 0 else 'FAIL'}")
+    print(f"[corpus] D_asym(marginal, exact)={dasym_real:.4e}  "
+          f"third-order={dasym_3rd_real:.4e}  S(delta)={skew_real:.6f}")
+    print(f"[note] <DeltaS> 估计 ΔS = D_KL(P_f∥P_b) ≥ 0，不是定理 3 的对象；"
+          f"定理 3 的检验见下一行（只依赖符号边际，与深度无关）。", flush=True)
+    n_marg = len(per_file)
+    n_marg_agree = sum(1 for r in per_file if r[5] * r[3] < 0)
+    n_third_agree = sum(1 for r in per_file if r[6] * r[3] < 0)
+    print(f"[third-order] 逐文件 sign(D_asym) = -sign(S(delta)): {n_marg_agree}/{n_marg}；"
+          f"sign(三阶预言) = -sign(S(delta)): {n_third_agree}/{n_marg}")
 
     dist_a, dist_b = [], []
     for k in range(args.nperm):
@@ -253,25 +302,38 @@ def main():
         p2 = (le + 1) / (n + 1)
         return min(1.0, 2.0 * min(p1, p2)) if two_sided else p1
 
-    mean_a = sum(dist_a) / len(dist_a)
-    mean_b = sum(dist_b) / len(dist_b)
-    print(f"[null-a 打乱符号]  null mean={mean_a:.6f}  p(单侧)={pval(dist_a, real_mean, two_sided=False):.4f}")
-    print(f"[null-b 打乱路径]  null mean={mean_b:.6f}  p(单侧)={pval(dist_b, real_mean, two_sided=False):.4f}")
-    pos_files = sum(1 for _, _, m, _, _ in per_file if m > 0)
-    sign_agree = sum(1 for _, _, m, sk, _ in per_file if m * sk < 0)
-    print(f"[per-file] 文件数={len(per_file)}  ⟨D_asym⟩>0={pos_files}  符号一致性={sign_agree}/{len(per_file)}")
+    if dist_a:
+        mean_a = sum(dist_a) / len(dist_a)
+        mean_b = sum(dist_b) / len(dist_b)
+        p_a1 = pval(dist_a, real_mean, two_sided=False)
+        p_b1 = pval(dist_b, real_mean, two_sided=False)
+        p_a2 = pval(dist_a, real_mean)
+        p_b2 = pval(dist_b, real_mean)
+        print(f"[null-a 打乱符号]  null mean={mean_a:.6f}  p(单侧)={p_a1:.4f}  p(双侧)={p_a2:.4f}")
+        print(f"[null-b 打乱路径]  null mean={mean_b:.6f}  p(单侧)={p_b1:.4f}  p(双侧)={p_b2:.4f}")
+    else:
+        mean_a = mean_b = p_a1 = p_b1 = p_a2 = p_b2 = float("nan")
+        print("[null-*] --nperm 0：跳过置换检验（仅计算 ⟨DeltaS⟩、S(δ) 与 D_asym(marginal)）")
+    pos_files = sum(1 for r in per_file if r[2] > 0)
+    print(f"[per-file] 文件数={len(per_file)}  ⟨DeltaS⟩>0={pos_files}"
+          f"（注意：⟨DeltaS⟩ 恒非负，此行不是定理 3 的检验）")
 
     out = {
-        "depth": args.depth, "real_mean": real_mean, "skew_delta": skew_real,
-        "sign_check_ok": real_mean * skew_real < 0, "positive_frac": pos_frac,
+        "depth": args.depth, "real_mean": real_mean,
+        "real_mean_note": "mean per-token log-ratio; estimates DeltaS = D_KL(P_f||P_b) >= 0, NOT D_asym",
+        "skew_delta": skew_real,
+        "dasym_marginal_real": dasym_real, "dasym_marginal_third_order": dasym_3rd_real,
+        "n_files_dasym_sign_agree": n_marg_agree, "n_files_third_order_sign_agree": n_third_agree,
+        "positive_frac": pos_frac,
         "n_tokens": N, "n_files": n_files, "n_parse_fail": n_parse_fail,
         "null_a_mean": mean_a, "null_b_mean": mean_b,
-        "p_one_sided_a": pval(dist_a, real_mean, two_sided=False),
-        "p_one_sided_b": pval(dist_b, real_mean, two_sided=False),
+        "p_one_sided_a": p_a1, "p_one_sided_b": p_b1,
+        "p_two_sided_a": p_a2, "p_two_sided_b": p_b2,
         "null_a_dist": dist_a, "null_b_dist": dist_b,
         "nperm": args.nperm, "seed": args.seed,
-        "per_file": [{"file": fp, "tokens": n, "mean": m, "skew": sk, "pos_frac": pf}
-                     for fp, n, m, sk, pf in per_file],
+        "per_file": [{"file": fp, "tokens": n, "mean": m, "skew": sk, "pos_frac": pf,
+                      "dasym_marginal": dax, "dasym_third_order": d3}
+                     for fp, n, m, sk, pf, dax, d3 in per_file],
     }
     if args.out:
         with open(args.out, "w", encoding="utf-8") as f:
