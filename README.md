@@ -73,6 +73,11 @@ comes only from the few edited files and does not change any conclusion).
 
 ## 用法示例 / Usage Examples
 
+本仓库全部脚本的注释与文档字符串均为**中英对照**（中文块后紧跟英文块，或同一行用 ` / ` 分隔）；运行时输出的标签保留中文并附英文说明。
+All comments and docstrings in this repository are **bilingual (Chinese + English)**: a Chinese block is
+followed by its English counterpart, or the two are separated by ` / ` on the same line. Runtime output labels are
+kept in Chinese with English annotations.
+
 ```bash
 # 安装外部依赖（仅两个脚本需要）/ install external dependencies (only two scripts need them)
 pip install sympy                        # symbolic_check.py

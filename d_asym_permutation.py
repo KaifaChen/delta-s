@@ -160,7 +160,8 @@ def dasym_marginal(fwd, bwd, n, v, alpha=1.0):
     pf, pb = marginals(fwd, bwd, n, v, alpha)
     # 用恒等式 D_asym = Σ_τ (P_f + P_b) log(P_f/P_b)（配合 log1p），避免"两个 KL 相减"的
     # 大项相消——当 δ 极小时后者会退化到双精度噪声水平。
-    # Identity form with log1p avoids catastrophic cancellation between the two KLs.
+    # Identity form with log1p avoids catastrophic cancellation between the two KLs,
+    # which degrades to the double-precision noise level when δ is extremely small.
     exact = 0.0
     for t in pf:
         exact += (pf[t] + pb[t]) * math.log1p((pf[t] - pb[t]) / pb[t])

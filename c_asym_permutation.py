@@ -24,7 +24,13 @@ c_asym_permutation.py — §5.4 C 语料的同协议验证（tree-sitter C 口�
       --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
 
 c_asym_permutation.py — same-protocol verification on a C corpus in §5.4 (tree-sitter C protocol).
-Exactly the same protocol as the Python version d_asym_permutation.py: (1) tree-sitter parses C source and extracts the symbolic leaves in source order; token = (structural path p, symbol τ), where p = the chain of the nearest depth named ancestor node types and τ = an abstract symbol (identifier/field_identifier→id; type_identifier/primitive_type/sized_type_specifier→type; number_literal→num; string_literal→str; char_literal→char; keywords (return/if/…)→keyword name; operators (+, ==, …)→operator; ( ) , ; { } and comments are skipped). (2) Forward counts (p_i→τ_i) and backward counts (p_{i+1}→τ_i), add-1 smoothing. (3) D_asym(i) = log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}). (4) ⟨D_asym⟩ and S(δ) (δ = backward symbol marginal − forward symbol marginal). (5) Two null-hypothesis permutation tests (shuffle symbols / shuffle paths), with the model re-estimated after each permutation. Runtime requirements: tree-sitter (0.25/0.26) and tree-sitter-c (0.25/0.26, the capsule ABI must match), i.e. the environment used by the paper's v1/v2 pipeline. Usage: python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
+Exactly the same protocol as the Python version d_asym_permutation.py: (1) tree-sitter parses C source and extracts the symbolic leaves in source order; token = (structural path p, symbol τ), where p = the chain of the nearest depth named ancestor node types and τ = an abstract symbol (identifier/field_identifier→id; type_identifier/primitive_type/sized_type_specifier→type; number_literal→num; string_literal→str; char_literal→char; keywords (return/if/…)→keyword name; operators (+, ==, …)→operator; ( ) , ; { } and comments are skipped). (2) Forward counts (p_i→τ_i) and backward counts (p_{i+1}→τ_i), add-1 smoothing. (3) Per-token log-ratio log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}); its empirical mean ⟨DeltaS⟩ estimates the local irreversibility ΔS = D_KL(P_f∥P_b) ≥ 0 (NOT the object of Theorem 3, D_asym = D_KL(P_f∥P_b) − D_KL(P_b∥P_f)). (4) S(δ) (δ = backward symbol marginal − forward symbol marginal) together with the test of Theorem 3: the exact KL difference D_asym(marginal) for the same pair of marginals (no expansion) and its third-order prediction −(1/6)Σδ³/P_f²; this test depends only on the symbol marginals and is therefore independent of the path depth. (5) Two null-hypothesis permutation tests (shuffle symbols / shuffle paths), with the model re-estimated after each permutation.
+
+Runtime requirements: tree-sitter (0.25/0.26) and tree-sitter-c (0.25/0.26, the capsule ABI must match), i.e. the environment used by the paper's v1/v2 pipeline. Usage:
+  python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> \
+      --depth 5 --nperm 1000 --maxfiles 0 --out perm_c.json
+  python c_asym_permutation.py --roots ... --depth 5 --nperm 0 --maxfiles 60 --out valid_c.json
+      (--nperm 0 skips the permutation tests and reports only ⟨DeltaS⟩, S(δ) and D_asym(marginal))
 """
 import argparse
 import json
@@ -169,7 +175,8 @@ def dasym_marginal(fwd, bwd, n, v, alpha=1.0):
     pf, pb = marginals(fwd, bwd, n, v, alpha)
     # 用恒等式 D_asym = Σ_τ (P_f + P_b) log(P_f/P_b)（配合 log1p），避免"两个 KL 相减"的
     # 大项相消——当 δ 极小时后者会退化到双精度噪声水平。
-    # Identity form with log1p avoids catastrophic cancellation between the two KLs.
+    # Identity form with log1p avoids catastrophic cancellation between the two KLs,
+    # which degrades to the double-precision noise level when δ is extremely small.
     exact = 0.0
     for t in pf:
         exact += (pf[t] + pb[t]) * math.log1p((pf[t] - pb[t]) / pb[t])

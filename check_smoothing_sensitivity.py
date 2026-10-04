@@ -12,7 +12,7 @@ import math
 import os
 import sys
 
-GH = os.path.dirname(os.path.abspath(__file__))   # 脚本所在目录（第三方克隆后即克隆目录）
+GH = os.path.dirname(os.path.abspath(__file__))   # 脚本所在目录（第三方克隆后即克隆目录）/ the script's own directory (the clone directory for third parties)
 sys.path.insert(0, GH)
 import d_asym_permutation as dap  # noqa: E402
 
