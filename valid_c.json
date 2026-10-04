@@ -1,0 +1,1538 @@
+{
+ "depth": 5,
+ "real_mean": 0.25837457102017386,
+ "real_mean_note": "mean per-token log-ratio; estimates DeltaS = D_KL(P_f||P_b) >= 0, NOT D_asym",
+ "skew_delta": -1.057524629923603,
+ "dasym_marginal_real": 1.0271986060440022e-16,
+ "dasym_marginal_third_order": 8.447772677973955e-17,
+ "n_files_dasym_sign_agree": 163,
+ "n_files_third_order_sign_agree": 166,
+ "positive_frac": 0.712516389499401,
+ "n_tokens": 212027,
+ "n_files": 240,
+ "n_parse_fail": 0,
+ "null_a_mean": NaN,
+ "null_b_mean": NaN,
+ "p_one_sided_a": NaN,
+ "p_one_sided_b": NaN,
+ "p_two_sided_a": NaN,
+ "p_two_sided_b": NaN,
+ "null_a_dist": [],
+ "null_b_dist": [],
+ "nperm": 0,
+ "seed": 20260929,
+ "per_file": [
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/atomic_arch.h",
+   "tokens": 268,
+   "mean": 0.2088620976177682,
+   "skew": -1.0063394480555514,
+   "pos_frac": 0.5955056179775281,
+   "dasym_marginal": 3.098044191354016e-08,
+   "dasym_third_order": 3.063017745673926e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/fp_arch.h",
+   "tokens": 68,
+   "mean": 0.14063573085396994,
+   "skew": -1.194695382179001,
+   "pos_frac": 0.4626865671641791,
+   "dasym_marginal": 2.501580578707528e-06,
+   "dasym_third_order": 2.3866095557472167e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/syscall_arch.h",
+   "tokens": 422,
+   "mean": 0.19079285810320049,
+   "skew": -0.7859334903119907,
+   "pos_frac": 0.44418052256532065,
+   "dasym_marginal": 5.2059453795015045e-09,
+   "dasym_third_order": 5.169575801312384e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/bits/fcntl.h",
+   "tokens": 68,
+   "mean": -0.00011129391751272985,
+   "skew": 1.147814029186945e-14,
+   "pos_frac": 0.4925373134328358,
+   "dasym_marginal": 7.354029397596551e-09,
+   "dasym_third_order": -5.823351512373315e-21
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/bits/hwcap.h",
+   "tokens": 102,
+   "mean": -4.8997121092499084e-05,
+   "skew": 0.0,
+   "pos_frac": 0.49504950495049505,
+   "dasym_marginal": 1.4809234203522204e-09,
+   "dasym_third_order": -0.0
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/aarch64/bits/signal.h",
+   "tokens": 330,
+   "mean": 0.12623784650429726,
+   "skew": -0.4926879003588204,
+   "pos_frac": 0.47416413373860183,
+   "dasym_marginal": 4.159326122318277e-09,
+   "dasym_third_order": 4.120872172436488e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/atomic_arch.h",
+   "tokens": 355,
+   "mean": 0.22237777789414195,
+   "skew": -6.7190937007271385,
+   "pos_frac": 0.5790960451977402,
+   "dasym_marginal": 7.280899571501848e-06,
+   "dasym_third_order": 6.397979127036191e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/pthread_arch.h",
+   "tokens": 89,
+   "mean": 0.09942368207877186,
+   "skew": -1.1269582260250504,
+   "pos_frac": 0.5,
+   "dasym_marginal": 7.504044812452551e-07,
+   "dasym_third_order": 7.26876796281954e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/reloc.h",
+   "tokens": 50,
+   "mean": 0.02289424610120682,
+   "skew": -0.31980107453340956,
+   "pos_frac": 0.40816326530612246,
+   "dasym_marginal": 5.250875086165903e-07,
+   "dasym_third_order": 4.893489203717124e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/syscall_arch.h",
+   "tokens": 421,
+   "mean": 0.171718038492519,
+   "skew": -0.6744394944677848,
+   "pos_frac": 0.45476190476190476,
+   "dasym_marginal": 3.739024486294068e-09,
+   "dasym_third_order": 3.713238351002684e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/fcntl.h",
+   "tokens": 68,
+   "mean": -0.00011129391751272985,
+   "skew": 1.147814029186945e-14,
+   "pos_frac": 0.4925373134328358,
+   "dasym_marginal": 7.354029397596551e-09,
+   "dasym_third_order": -5.823351512373315e-21
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/hwcap.h",
+   "tokens": 102,
+   "mean": -4.8997121092499084e-05,
+   "skew": 0.0,
+   "pos_frac": 0.49504950495049505,
+   "dasym_marginal": 1.4809234203522204e-09,
+   "dasym_third_order": -0.0
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/sem.h",
+   "tokens": 52,
+   "mean": 0.0787070134140469,
+   "skew": -1.1785714285714348,
+   "pos_frac": 0.49019607843137253,
+   "dasym_marginal": 4.2480227822191356e-06,
+   "dasym_third_order": 4.015862941741964e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/shm.h",
+   "tokens": 73,
+   "mean": 0.2992071931173387,
+   "skew": -0.4618422052116974,
+   "pos_frac": 0.6111111111111112,
+   "dasym_marginal": 3.2338195726159917e-07,
+   "dasym_third_order": 3.102506308223658e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/signal.h",
+   "tokens": 207,
+   "mean": 0.15856256053240786,
+   "skew": -0.44290922588659093,
+   "pos_frac": 0.5533980582524272,
+   "dasym_marginal": 1.3421370007748621e-08,
+   "dasym_third_order": 1.3219299104474592e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/arm/bits/user.h",
+   "tokens": 105,
+   "mean": 0.1820030906328977,
+   "skew": -1.0386168872122623,
+   "pos_frac": 0.4807692307692308,
+   "dasym_marginal": 5.365228851521514e-07,
+   "dasym_third_order": 5.211538657876188e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/generic/bits/errno.h",
+   "tokens": 268,
+   "mean": -7.01333346477842e-06,
+   "skew": -4.482563162831314e-14,
+   "pos_frac": 0.49812734082397003,
+   "dasym_marginal": 3.183068522302768e-11,
+   "dasym_third_order": 3.8381180422460484e-22
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/generic/bits/fcntl.h",
+   "tokens": 81,
+   "mean": 0.0686573160670244,
+   "skew": -0.24910094751180784,
+   "pos_frac": 0.4875,
+   "dasym_marginal": 9.33164204842702e-08,
+   "dasym_third_order": 8.843704210837031e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/generic/bits/ioctl.h",
+   "tokens": 231,
+   "mean": 0.006566825454153825,
+   "skew": -10.81704226493289,
+   "pos_frac": 0.05217391304347826,
+   "dasym_marginal": 0.0003256810919054443,
+   "dasym_third_order": 0.0001714288909371154
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/musl/arch/generic/bits/shm.h",
+   "tokens": 52,
+   "mean": 0.2761775087957668,
+   "skew": -0.3795360576382968,
+   "pos_frac": 0.5882352941176471,
+   "dasym_marginal": 6.072841087253859e-07,
+   "dasym_third_order": 5.709564914662538e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/cgi/main.c",
+   "tokens": 246,
+   "mean": 0.15935150383299232,
+   "skew": -0.21332443290775271,
+   "pos_frac": 0.5142857142857142,
+   "dasym_marginal": 2.7456978361935225e-09,
+   "dasym_third_order": 2.6898519478827998e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/detach/main.c",
+   "tokens": 83,
+   "mean": 0.23559806546519235,
+   "skew": -0.30123203803834386,
+   "pos_frac": 0.5975609756097561,
+   "dasym_marginal": 1.0236270228029896e-07,
+   "dasym_third_order": 9.79042887672979e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/dns/main.c",
+   "tokens": 256,
+   "mean": 0.17267516159406177,
+   "skew": -0.07304136188699487,
+   "pos_frac": 0.5529411764705883,
+   "dasym_marginal": 7.025037259607314e-10,
+   "dasym_third_order": 6.675768846035878e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/idle-compute/main.c",
+   "tokens": 109,
+   "mean": 0.14235261304550934,
+   "skew": -0.11400590984728468,
+   "pos_frac": 0.5370370370370371,
+   "dasym_marginal": 1.3373290901758095e-08,
+   "dasym_third_order": 1.2414369488163322e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/interfaces/main.c",
+   "tokens": 96,
+   "mean": 0.24158123376931834,
+   "skew": -5.89015614342603,
+   "pos_frac": 0.5894736842105263,
+   "dasym_marginal": 0.00022711391683460393,
+   "dasym_third_order": 0.00015514173179192314
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/locks/main.c",
+   "tokens": 156,
+   "mean": 0.17384096505077176,
+   "skew": -2.540341184434353,
+   "pos_frac": 0.6,
+   "dasym_marginal": 2.302964894403017e-06,
+   "dasym_third_order": 2.1868526245265215e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/multi-echo-server/main.c",
+   "tokens": 364,
+   "mean": 0.1302313483478826,
+   "skew": -0.15591201561112117,
+   "pos_frac": 0.5206611570247934,
+   "dasym_marginal": 5.858082202275284e-10,
+   "dasym_third_order": 5.751897605012402e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/multi-echo-server/worker.c",
+   "tokens": 264,
+   "mean": 0.10850278196163635,
+   "skew": -0.16193168230249086,
+   "pos_frac": 0.4828897338403042,
+   "dasym_marginal": 1.5381315720066919e-09,
+   "dasym_third_order": 1.501757103935505e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/onchange/main.c",
+   "tokens": 131,
+   "mean": 0.16089627862199393,
+   "skew": -0.2965401263094836,
+   "pos_frac": 0.5307692307692308,
+   "dasym_marginal": 2.393988743126709e-08,
+   "dasym_third_order": 2.327293349545001e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/pipe-echo-server/main.c",
+   "tokens": 255,
+   "mean": 0.10529988547200281,
+   "skew": -0.1799352925088976,
+   "pos_frac": 0.4448818897637795,
+   "dasym_marginal": 1.8689572664823666e-09,
+   "dasym_third_order": 1.8276394194484713e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/plugin/main.c",
+   "tokens": 91,
+   "mean": 0.15288765632820683,
+   "skew": -4.271943931103853,
+   "pos_frac": 0.4777777777777778,
+   "dasym_marginal": 6.885802057862787e-05,
+   "dasym_third_order": 5.583846236907461e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/proc-streams/main.c",
+   "tokens": 141,
+   "mean": 0.16170458276696195,
+   "skew": -0.10403657528545468,
+   "pos_frac": 0.5428571428571428,
+   "dasym_marginal": 6.037546327822144e-09,
+   "dasym_third_order": 5.658531564178412e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/progress/main.c",
+   "tokens": 138,
+   "mean": 0.1074178633890081,
+   "skew": -0.24702420955888826,
+   "pos_frac": 0.5036496350364964,
+   "dasym_marginal": 1.6829598045839302e-08,
+   "dasym_third_order": 1.6313292200946003e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/queue-cancel/main.c",
+   "tokens": 173,
+   "mean": 0.11280862639325534,
+   "skew": -0.22827669566703704,
+   "pos_frac": 0.5116279069767442,
+   "dasym_marginal": 7.647552392731332e-09,
+   "dasym_third_order": 7.447771714883116e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/queue-work/main.c",
+   "tokens": 129,
+   "mean": 0.10894614849297245,
+   "skew": -0.3519947346980248,
+   "pos_frac": 0.515625,
+   "dasym_marginal": 3.075837524697117e-08,
+   "dasym_third_order": 2.998904152083806e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/ref-timer/main.c",
+   "tokens": 61,
+   "mean": 0.076753732049797,
+   "skew": -0.1720618004029134,
+   "pos_frac": 0.5166666666666667,
+   "dasym_marginal": 1.2369232918127415e-07,
+   "dasym_third_order": 1.1296303906437387e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/signal/main.c",
+   "tokens": 139,
+   "mean": 0.05013154784750411,
+   "skew": -5.918363542992862,
+   "pos_frac": 0.39855072463768115,
+   "dasym_marginal": 8.47506545704962e-05,
+   "dasym_third_order": 6.447956999678468e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/spawn/main.c",
+   "tokens": 99,
+   "mean": 0.21203311715526607,
+   "skew": -0.3099631069330485,
+   "pos_frac": 0.5714285714285714,
+   "dasym_marginal": 6.400116530464687e-08,
+   "dasym_third_order": 6.167424953832621e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/tcp-echo-server/main.c",
+   "tokens": 249,
+   "mean": 0.08465636087214978,
+   "skew": -0.14161763857497817,
+   "pos_frac": 0.45161290322580644,
+   "dasym_marginal": 1.5599245984423407e-09,
+   "dasym_third_order": 1.5161439405777036e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/thread-create/main.c",
+   "tokens": 84,
+   "mean": 0.13432088281560403,
+   "skew": -4.006938426723772,
+   "pos_frac": 0.4457831325301205,
+   "dasym_marginal": 7.564904520589047e-05,
+   "dasym_third_order": 6.140257938992321e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/tty/main.c",
+   "tokens": 86,
+   "mean": 0.0751961847933714,
+   "skew": -0.16381203115572585,
+   "pos_frac": 0.4470588235294118,
+   "dasym_marginal": 4.0926752974742176e-08,
+   "dasym_third_order": 3.823616929783725e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/tty-gravity/main.c",
+   "tokens": 128,
+   "mean": 0.1255005104383243,
+   "skew": -0.23611111111110838,
+   "pos_frac": 0.48031496062992124,
+   "dasym_marginal": 1.9422074721636923e-08,
+   "dasym_third_order": 1.876442520706716e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/udp-dhcp/main.c",
+   "tokens": 411,
+   "mean": 0.22574229748673943,
+   "skew": -0.33563081606549455,
+   "pos_frac": 0.6707317073170732,
+   "dasym_marginal": 1.1884293979550755e-09,
+   "dasym_third_order": 1.1776323787959322e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/uvcat/main.c",
+   "tokens": 177,
+   "mean": 0.155047224258377,
+   "skew": -2.92678900046991,
+   "pos_frac": 0.5738636363636364,
+   "dasym_marginal": 2.393249172701829e-06,
+   "dasym_third_order": 2.263557835011949e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/uvstop/main.c",
+   "tokens": 60,
+   "mean": 0.10464336463313523,
+   "skew": -3.88057000058133,
+   "pos_frac": 0.4576271186440678,
+   "dasym_marginal": 0.00016543393508416406,
+   "dasym_third_order": 0.00012666091104585587
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/uvtee/main.c",
+   "tokens": 256,
+   "mean": 0.040866847213980304,
+   "skew": -4.46791831204338,
+   "pos_frac": 0.4588235294117647,
+   "dasym_marginal": 4.0350002047135226e-06,
+   "dasym_third_order": 3.714189338510963e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/docs/code/uvwget/main.c",
+   "tokens": 440,
+   "mean": 0.12668784736236766,
+   "skew": -5.338491305956977,
+   "pos_frac": 0.49430523917995445,
+   "dasym_marginal": 1.5304563174187272e-06,
+   "dasym_third_order": 1.4319965759717947e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/include/uv.h",
+   "tokens": 4549,
+   "mean": 0.18962667691198398,
+   "skew": -20.335876204901126,
+   "pos_frac": 0.6116974494283202,
+   "dasym_marginal": 3.281436549149025e-07,
+   "dasym_third_order": 2.9864728293146787e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/include/uv/errno.h",
+   "tokens": 1041,
+   "mean": -0.08630033612180706,
+   "skew": -3.4263446117361864,
+   "pos_frac": 0.2298076923076923,
+   "dasym_marginal": 2.489453658609264e-08,
+   "dasym_third_order": 2.4570631274043835e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/include/uv/tree.h",
+   "tokens": 615,
+   "mean": 0.018815931242201555,
+   "skew": -11.153829449673573,
+   "pos_frac": 0.2703583061889251,
+   "dasym_marginal": 1.2753338727149057e-05,
+   "dasym_third_order": 1.0268854801589865e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/include/uv/unix.h",
+   "tokens": 686,
+   "mean": 0.07037337016574047,
+   "skew": -3.9608452841885513,
+   "pos_frac": 0.4291970802919708,
+   "dasym_marginal": 1.4183790856759756e-07,
+   "dasym_third_order": 1.3829777593772203e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/include/uv/win.h",
+   "tokens": 821,
+   "mean": 0.16746984625186365,
+   "skew": -0.6662215792687735,
+   "pos_frac": 0.5317073170731708,
+   "dasym_marginal": 4.894551063583353e-10,
+   "dasym_third_order": 4.877210676122109e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/fs-poll.c",
+   "tokens": 823,
+   "mean": 0.1608960056811341,
+   "skew": -16.882046212487342,
+   "pos_frac": 0.5778588807785888,
+   "dasym_marginal": 3.137373091402061e-05,
+   "dasym_third_order": 2.1284541159630638e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/heap-inl.h",
+   "tokens": 651,
+   "mean": 0.15764875087525365,
+   "skew": -15.055598289158382,
+   "pos_frac": 0.46615384615384614,
+   "dasym_marginal": 3.926187736815866e-05,
+   "dasym_third_order": 2.664316073642944e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/idna.c",
+   "tokens": 1559,
+   "mean": 0.16348720260389507,
+   "skew": -2.4704258279376625,
+   "pos_frac": 0.5134788189987163,
+   "dasym_marginal": 2.251111851582537e-09,
+   "dasym_third_order": 2.2397353813031466e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/inet.c",
+   "tokens": 1050,
+   "mean": 0.15076740055828378,
+   "skew": -3.4472043536496333,
+   "pos_frac": 0.5042897998093422,
+   "dasym_marginal": 2.274775333259481e-08,
+   "dasym_third_order": 2.2459608711276192e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/queue.h",
+   "tokens": 254,
+   "mean": 0.11726710638693583,
+   "skew": -11.48945006023209,
+   "pos_frac": 0.41106719367588934,
+   "dasym_marginal": 0.0002900200846986397,
+   "dasym_third_order": 0.00015259782687748288
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/random.c",
+   "tokens": 297,
+   "mean": 0.04304536115431213,
+   "skew": -6.624118787486033,
+   "pos_frac": 0.3952702702702703,
+   "dasym_marginal": 1.1378960960904023e-05,
+   "dasym_third_order": 9.80492084772927e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/strscpy.c",
+   "tokens": 58,
+   "mean": 0.12838025855157334,
+   "skew": -0.9486832980505157,
+   "pos_frac": 0.47368421052631576,
+   "dasym_marginal": 1.4847503188250306e-06,
+   "dasym_third_order": 1.4237680419886103e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/strtok.c",
+   "tokens": 94,
+   "mean": 0.08737743896169775,
+   "skew": -1.0484211901091607,
+   "pos_frac": 0.4838709677419355,
+   "dasym_marginal": 5.949542532823239e-07,
+   "dasym_third_order": 5.773703796050447e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libuv/src/thread-common.c",
+   "tokens": 384,
+   "mean": 0.1343022582050007,
+   "skew": -6.576042521481692,
+   "pos_frac": 0.5221932114882507,
+   "dasym_marginal": 5.226964130822156e-06,
+   "dasym_third_order": 4.663338295539707e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/bmp2tiff.c",
+   "tokens": 2327,
+   "mean": 0.1999169942755962,
+   "skew": -3.071689781366134,
+   "pos_frac": 0.5722269991401547,
+   "dasym_marginal": 1.4548608971714252e-09,
+   "dasym_third_order": 1.4478749017166006e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/gif2tiff.c",
+   "tokens": 1576,
+   "mean": 0.2024039198327548,
+   "skew": -0.376505404354893,
+   "pos_frac": 0.5326984126984127,
+   "dasym_marginal": 2.5649639243245398e-11,
+   "dasym_third_order": 2.5591962961191934e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/ras2tiff.c",
+   "tokens": 1092,
+   "mean": 0.1690303148599879,
+   "skew": -3.3209083573958535,
+   "pos_frac": 0.4986251145737855,
+   "dasym_marginal": 1.7474633539014533e-08,
+   "dasym_third_order": 1.7275592294207856e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/sgi2tiff.c",
+   "tokens": 1090,
+   "mean": 0.140387025166293,
+   "skew": -3.2454101250416767,
+   "pos_frac": 0.4986225895316804,
+   "dasym_marginal": 1.6701673126216186e-08,
+   "dasym_third_order": 1.6516389201639692e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/sgisv.c",
+   "tokens": 1050,
+   "mean": 0.11099709104998548,
+   "skew": -0.25221008840545206,
+   "pos_frac": 0.45376549094375596,
+   "dasym_marginal": 4.702436650216456e-11,
+   "dasym_third_order": 4.681952853584598e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/archive/tools/ycbcr.c",
+   "tokens": 672,
+   "mean": 0.09875069214489429,
+   "skew": -0.13517136750763198,
+   "pos_frac": 0.4217585692995529,
+   "dasym_marginal": 8.277468973277695e-11,
+   "dasym_third_order": 8.182671315800738e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/addtiffo/addtiffo.c",
+   "tokens": 213,
+   "mean": 0.12115575253081427,
+   "skew": -1.9222086417798483,
+   "pos_frac": 0.46226415094339623,
+   "dasym_marginal": 3.0734524760861427e-07,
+   "dasym_third_order": 3.000255322890497e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/addtiffo/tif_overview.c",
+   "tokens": 2303,
+   "mean": 0.12813143958921613,
+   "skew": -0.02047888918249325,
+   "pos_frac": 0.5026064291920069,
+   "dasym_marginal": 2.7937615997949603e-13,
+   "dasym_third_order": 2.736395386060837e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/addtiffo/tif_ovrcache.c",
+   "tokens": 918,
+   "mean": 0.15625583506491156,
+   "skew": 0.2683520503311371,
+   "pos_frac": 0.5387131952017448,
+   "dasym_marginal": -3.4357399800408217e-11,
+   "dasym_third_order": -3.448364435450932e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/addtiffo/tif_ovrcache.h",
+   "tokens": 171,
+   "mean": 0.3162433185304431,
+   "skew": -6.634888026970378,
+   "pos_frac": 0.6470588235294118,
+   "dasym_marginal": 6.94236214883078e-05,
+   "dasym_third_order": 5.275872304315979e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/tiff-bi.c",
+   "tokens": 211,
+   "mean": 0.035474891302166876,
+   "skew": -2.026761280055625,
+   "pos_frac": 0.3523809523809524,
+   "dasym_marginal": 4.2391230422030653e-07,
+   "dasym_third_order": 4.1253424394747087e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/tiff-grayscale.c",
+   "tokens": 344,
+   "mean": 0.06141912111871461,
+   "skew": -2.1527473116123756,
+   "pos_frac": 0.36443148688046645,
+   "dasym_marginal": 1.1611469113731809e-07,
+   "dasym_third_order": 1.1404541201824478e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/tiff-palette.c",
+   "tokens": 918,
+   "mean": 0.11726718627548678,
+   "skew": -1.1693714230309702,
+   "pos_frac": 0.3969465648854962,
+   "dasym_marginal": 1.2160175393093297e-09,
+   "dasym_third_order": 1.2114953128863773e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/tiff-rgb.c",
+   "tokens": 793,
+   "mean": 0.04091424453518809,
+   "skew": -1.3212985715692698,
+   "pos_frac": 0.3434343434343434,
+   "dasym_marginal": 2.588263182146889e-09,
+   "dasym_third_order": 2.576065781244607e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/xtiff/xtiff.c",
+   "tokens": 3807,
+   "mean": 0.18621572533340452,
+   "skew": -3.1333536881173316,
+   "pos_frac": 0.5178665265370468,
+   "dasym_marginal": 3.6689178844780186e-10,
+   "dasym_third_order": 3.6576716653602374e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/dbs/xtiff/xtifficon.h",
+   "tokens": 136,
+   "mean": 0.030210631202523673,
+   "skew": 2.832640484931877,
+   "pos_frac": 0.9629629629629629,
+   "dasym_marginal": -5.349424823301949e-09,
+   "dasym_third_order": -5.387823157321105e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/iptcutil/iptcutil.c",
+   "tokens": 1827,
+   "mean": 0.1806125228956094,
+   "skew": -2.7178046979466552,
+   "pos_frac": 0.5596933187294633,
+   "dasym_marginal": 1.936417214891202e-09,
+   "dasym_third_order": 1.9267410092319728e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/mfs/mfs_file.c",
+   "tokens": 825,
+   "mean": 0.17375411273824515,
+   "skew": -3.6380945175688835,
+   "pos_frac": 0.5861650485436893,
+   "dasym_marginal": 5.815124118207585e-08,
+   "dasym_third_order": 5.711783034375691e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/pds/tif_imageiter.c",
+   "tokens": 1512,
+   "mean": 0.1587402743210588,
+   "skew": -27.766910048852363,
+   "pos_frac": 0.5069490403706155,
+   "dasym_marginal": 5.1190780004281755e-05,
+   "dasym_third_order": 2.686424272523548e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/pds/tif_imageiter.h",
+   "tokens": 104,
+   "mean": 0.16388507609320596,
+   "skew": -1.3926212476455802,
+   "pos_frac": 0.5533980582524272,
+   "dasym_marginal": 1.2362534697133712e-06,
+   "dasym_third_order": 1.1915711398978422e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/pds/tif_pdsdirread.c",
+   "tokens": 3244,
+   "mean": 0.18073688201089078,
+   "skew": -23.380942865224867,
+   "pos_frac": 0.494295405488745,
+   "dasym_marginal": 1.6708142817391101e-06,
+   "dasym_third_order": 1.3973873037324662e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/pds/tif_pdsdirwrite.c",
+   "tokens": 2660,
+   "mean": 0.12766964569764339,
+   "skew": -4.109162635320686,
+   "pos_frac": 0.49981195938322676,
+   "dasym_marginal": 2.8131321900472893e-09,
+   "dasym_third_order": 2.793582435397467e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/ras/ras2tif.c",
+   "tokens": 599,
+   "mean": 0.15955966561711896,
+   "skew": -3.264045696959614,
+   "pos_frac": 0.5083612040133779,
+   "dasym_marginal": 9.574615305715166e-08,
+   "dasym_third_order": 9.384715627652112e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/ras/tif2ras.c",
+   "tokens": 982,
+   "mean": 0.22320966148552113,
+   "skew": -3.0623091292051257,
+   "pos_frac": 0.5423037716615698,
+   "dasym_marginal": 1.8502979644181917e-08,
+   "dasym_third_order": 1.8296477015203534e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/stream/tiffstream.h",
+   "tokens": 157,
+   "mean": 0.11478183513572852,
+   "skew": -9.11107922838356,
+   "pos_frac": 0.5641025641025641,
+   "dasym_marginal": 0.00045150259913350084,
+   "dasym_third_order": 0.00023798995682382208
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/tags/listtif.c",
+   "tokens": 65,
+   "mean": 0.08441206178825399,
+   "skew": -3.1492602902248152,
+   "pos_frac": 0.46875,
+   "dasym_marginal": 5.755068342784401e-05,
+   "dasym_third_order": 4.86717741761298e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/tags/maketif.c",
+   "tokens": 159,
+   "mean": 0.0806950496642888,
+   "skew": -2.959800105863002,
+   "pos_frac": 0.41139240506329117,
+   "dasym_marginal": 3.475860321343154e-06,
+   "dasym_third_order": 3.2621691141090473e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/tags/xtif_dir.c",
+   "tokens": 604,
+   "mean": 0.1440358568356574,
+   "skew": 0.08869468382929178,
+   "pos_frac": 0.4842454394693201,
+   "dasym_marginal": -5.0623409191810284e-11,
+   "dasym_third_order": -5.1510737325982926e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/tags/xtiffio.h",
+   "tokens": 61,
+   "mean": 0.0799205219146037,
+   "skew": -3.944254410803505,
+   "pos_frac": 0.45,
+   "dasym_marginal": 0.00016162910580984151,
+   "dasym_third_order": 0.00012370924663960715
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/tags/xtiffiop.h",
+   "tokens": 71,
+   "mean": 0.10278646597980676,
+   "skew": -6.125791088153122,
+   "pos_frac": 0.44285714285714284,
+   "dasym_marginal": 0.0009340449588960118,
+   "dasym_third_order": 0.0004950358072916665
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/contrib/win_dib/tiff2dib.c",
+   "tokens": 790,
+   "mean": 0.06554919710744057,
+   "skew": -3.456453684352247,
+   "pos_frac": 0.4347275031685678,
+   "dasym_marginal": 5.257639565871482e-08,
+   "dasym_third_order": 5.169624516135898e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/mkspans.c",
+   "tokens": 160,
+   "mean": 0.10286462754383216,
+   "skew": -1.6888013236829869,
+   "pos_frac": 0.4025157232704403,
+   "dasym_marginal": 4.558411174461008e-07,
+   "dasym_third_order": 4.437908681218322e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/t4.h",
+   "tokens": 701,
+   "mean": 0.009386731687366668,
+   "skew": -15.351575627286568,
+   "pos_frac": 0.03428571428571429,
+   "dasym_marginal": 3.779575258358537e-05,
+   "dasym_third_order": 2.564696583964029e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_aux.c",
+   "tokens": 1198,
+   "mean": 0.1634471956849227,
+   "skew": -0.3473788766734409,
+   "pos_frac": 0.5271512113617377,
+   "dasym_marginal": 5.2160757487486895e-11,
+   "dasym_third_order": 5.199893857641416e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_close.c",
+   "tokens": 218,
+   "mean": 0.1584581761916993,
+   "skew": 0.32629146642935797,
+   "pos_frac": 0.5483870967741935,
+   "dasym_marginal": -2.5425729205429473e-09,
+   "dasym_third_order": -2.5740846198815984e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_codec.c",
+   "tokens": 288,
+   "mean": 0.277213398036123,
+   "skew": -5.600297611139369,
+   "pos_frac": 0.6376306620209059,
+   "dasym_marginal": 6.885633165889022e-06,
+   "dasym_third_order": 6.147886271009896e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_color.c",
+   "tokens": 1040,
+   "mean": 0.09273144455376173,
+   "skew": -2.5758993695687447,
+   "pos_frac": 0.46968238691049086,
+   "dasym_marginal": 8.90765011205869e-09,
+   "dasym_third_order": 8.835361982812686e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_compress.c",
+   "tokens": 766,
+   "mean": 0.15786470339234318,
+   "skew": -0.14611704241016035,
+   "pos_frac": 0.5607843137254902,
+   "dasym_marginal": 6.090316257395371e-11,
+   "dasym_third_order": 6.033238585606443e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_dir.c",
+   "tokens": 6398,
+   "mean": 0.24744542775874395,
+   "skew": -4.34112663581591,
+   "pos_frac": 0.6002813818977646,
+   "dasym_marginal": 2.5644009247984507e-10,
+   "dasym_third_order": 2.556115235977518e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_dir.h",
+   "tokens": 621,
+   "mean": 0.14547640064960085,
+   "skew": -11.207490218179796,
+   "pos_frac": 0.5112903225806451,
+   "dasym_marginal": 1.2636765225316886e-05,
+   "dasym_third_order": 1.0174850702897484e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_dirinfo.c",
+   "tokens": 6794,
+   "mean": 0.27167849429162855,
+   "skew": -1.0019833603186394,
+   "pos_frac": 0.6001766524363316,
+   "dasym_marginal": 2.222214482070022e-12,
+   "dasym_third_order": 2.221324633411379e-12
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_dirwrite.c",
+   "tokens": 10530,
+   "mean": 0.16650341572755228,
+   "skew": -3.7237686593346973,
+   "pos_frac": 0.5087852597587615,
+   "dasym_marginal": 3.2925087484345705e-11,
+   "dasym_third_order": 3.2875726794736394e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_dumpmode.c",
+   "tokens": 229,
+   "mean": 0.10612480730795645,
+   "skew": -4.705474872521751,
+   "pos_frac": 0.4342105263157895,
+   "dasym_marginal": 6.566130496330028e-06,
+   "dasym_third_order": 5.93824000000001e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_error.c",
+   "tokens": 249,
+   "mean": 0.10984491010335268,
+   "skew": 0.36980013081683427,
+   "pos_frac": 0.5524193548387096,
+   "dasym_marginal": -1.9326868077934253e-09,
+   "dasym_third_order": -1.9516291683604334e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_extension.c",
+   "tokens": 190,
+   "mean": 0.1418589233429462,
+   "skew": -0.23864785253886048,
+   "pos_frac": 0.5502645502645502,
+   "dasym_marginal": 6.2844375055715485e-09,
+   "dasym_third_order": 6.138284087919067e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_fax3.c",
+   "tokens": 5111,
+   "mean": 0.19641319116268058,
+   "skew": -19.87273499805503,
+   "pos_frac": 0.5911937377690802,
+   "dasym_marginal": 2.0492353292830776e-07,
+   "dasym_third_order": 1.8931732799620116e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_fax3.h",
+   "tokens": 656,
+   "mean": 0.15367383364134782,
+   "skew": -10.669675085346258,
+   "pos_frac": 0.47480916030534354,
+   "dasym_marginal": 7.719728852841469e-06,
+   "dasym_third_order": 6.4633273944498495e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_fax3sm.c",
+   "tokens": 37270,
+   "mean": 0.0009119727972184544,
+   "skew": 38.57564868029089,
+   "pos_frac": 0.9997585124366095,
+   "dasym_marginal": 7.662980515175935e-17,
+   "dasym_third_order": -2.158041041541257e-18
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_flush.c",
+   "tokens": 281,
+   "mean": 0.14308436733182975,
+   "skew": -0.15225445742958518,
+   "pos_frac": 0.5464285714285714,
+   "dasym_marginal": 1.1852276078172606e-09,
+   "dasym_third_order": 1.1574101584902359e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_getimage.c",
+   "tokens": 9363,
+   "mean": 0.17753144595941114,
+   "skew": -0.10015721202151422,
+   "pos_frac": 0.5173039948728904,
+   "dasym_marginal": 2.328629909895866e-14,
+   "dasym_third_order": 2.3235443853527488e-14
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_hash_set.c",
+   "tokens": 981,
+   "mean": 0.18790513570582498,
+   "skew": -9.955395079896865,
+   "pos_frac": 0.5795918367346938,
+   "dasym_marginal": 1.7623674664117112e-06,
+   "dasym_third_order": 1.5894009468454857e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_hash_set.h",
+   "tokens": 134,
+   "mean": 0.12423563173240344,
+   "skew": -4.677102882692587,
+   "pos_frac": 0.5112781954887218,
+   "dasym_marginal": 3.325534729406478e-05,
+   "dasym_third_order": 2.797806709192752e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_jbig.c",
+   "tokens": 449,
+   "mean": 0.10746711905423069,
+   "skew": -10.886151696315206,
+   "pos_frac": 0.4799107142857143,
+   "dasym_marginal": 2.7764493524683896e-05,
+   "dasym_third_order": 2.1036742257814894e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_jpeg.c",
+   "tokens": 7420,
+   "mean": 0.23068963584782334,
+   "skew": -13.745119666070666,
+   "pos_frac": 0.5965763579997304,
+   "dasym_marginal": 1.4793736048517189e-08,
+   "dasym_third_order": 1.441728805299952e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/libtiff/libtiff/tif_jpeg_12.c",
+   "tokens": 122,
+   "mean": 0.0023441034370356006,
+   "skew": -4.569149697019271,
+   "pos_frac": 0.34710743801652894,
+   "dasym_marginal": 3.44833390709062e-05,
+   "dasym_third_order": 2.901837431755484e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/adler32.c",
+   "tokens": 358,
+   "mean": 0.0758309009838456,
+   "skew": -0.1797497278352886,
+   "pos_frac": 0.42016806722689076,
+   "dasym_marginal": 6.717518875206632e-10,
+   "dasym_third_order": 6.610930198816782e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/compress.c",
+   "tokens": 327,
+   "mean": 0.08577480014961085,
+   "skew": -0.26210932585716334,
+   "pos_frac": 0.44171779141104295,
+   "dasym_marginal": 1.4892194843493952e-09,
+   "dasym_third_order": 1.4698432392354631e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/crc32.c",
+   "tokens": 2822,
+   "mean": 0.07951915885314201,
+   "skew": -0.5871680278455932,
+   "pos_frac": 0.4002126905352712,
+   "dasym_marginal": 9.795230126208071e-12,
+   "dasym_third_order": 9.784812951375311e-12
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/deflate.c",
+   "tokens": 6490,
+   "mean": 0.18820811212914684,
+   "skew": 0.17689803155024825,
+   "pos_frac": 0.5577130528586839,
+   "dasym_marginal": -8.044507894041107e-14,
+   "dasym_third_order": -8.056691034570904e-14
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/deflate.h",
+   "tokens": 424,
+   "mean": 0.11382787979596676,
+   "skew": -6.840926758614645,
+   "pos_frac": 0.5011820330969267,
+   "dasym_marginal": 4.875245272236254e-06,
+   "dasym_third_order": 4.3488470847610615e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/gzguts.h",
+   "tokens": 398,
+   "mean": 0.10913532621980129,
+   "skew": -0.8826550133211722,
+   "pos_frac": 0.4811083123425693,
+   "dasym_marginal": 6.973281151771422e-09,
+   "dasym_third_order": 6.922678340912578e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/gzlib.c",
+   "tokens": 1665,
+   "mean": 0.2049321516407181,
+   "skew": -9.350520610128124,
+   "pos_frac": 0.5516826923076923,
+   "dasym_marginal": 2.7456183310154593e-07,
+   "dasym_third_order": 2.6033545755544826e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/gzread.c",
+   "tokens": 1810,
+   "mean": 0.2281219567458624,
+   "skew": 0.01510291172148045,
+   "pos_frac": 0.6091763405196241,
+   "dasym_marginal": -3.731023075806113e-13,
+   "dasym_third_order": -3.86762716773928e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/gzwrite.c",
+   "tokens": 2128,
+   "mean": 0.1724605301586663,
+   "skew": 0.17833941569277,
+   "pos_frac": 0.536436295251528,
+   "dasym_marginal": -2.215356315832293e-12,
+   "dasym_third_order": -2.2207123163001863e-12
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/infback.c",
+   "tokens": 1491,
+   "mean": 0.2793461128401216,
+   "skew": 0.019468800353035016,
+   "pos_frac": 0.6422818791946309,
+   "dasym_marginal": -8.342114696710512e-13,
+   "dasym_third_order": -8.628656693078824e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inffast.c",
+   "tokens": 962,
+   "mean": 0.1587748489266165,
+   "skew": -12.81298890660682,
+   "pos_frac": 0.4963579604578564,
+   "dasym_marginal": 5.432941961623883e-06,
+   "dasym_third_order": 4.546863295566228e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inffixed.h",
+   "tokens": 1644,
+   "mean": 0.008454555393867738,
+   "skew": 10.344523880387408,
+   "pos_frac": 0.9951308581862447,
+   "dasym_marginal": -3.375639713229777e-13,
+   "dasym_third_order": -3.37876154207728e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inflate.c",
+   "tokens": 4255,
+   "mean": 0.23965450277730643,
+   "skew": 0.11477913272104011,
+   "pos_frac": 0.5897978373295721,
+   "dasym_marginal": -2.00905784672068e-13,
+   "dasym_third_order": -2.0116338996143672e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inflate.h",
+   "tokens": 133,
+   "mean": 0.2392280834289298,
+   "skew": 0.027029495135958564,
+   "pos_frac": 0.8409090909090909,
+   "dasym_marginal": -1.0235494333609568e-09,
+   "dasym_third_order": -1.3618430988608107e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inftrees.c",
+   "tokens": 1155,
+   "mean": 0.16451786312138625,
+   "skew": -12.155520465875858,
+   "pos_frac": 0.608318890814558,
+   "dasym_marginal": 2.4186934945330007e-06,
+   "dasym_third_order": 2.121834049519673e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/inftrees.h",
+   "tokens": 69,
+   "mean": 0.08038263352578896,
+   "skew": -0.707106781186537,
+   "pos_frac": 0.4264705882352941,
+   "dasym_marginal": 6.759249265497411e-07,
+   "dasym_third_order": 6.510416666666548e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/trees.c",
+   "tokens": 3235,
+   "mean": 0.18112565814941173,
+   "skew": -0.007294881351075578,
+   "pos_frac": 0.5460729746444032,
+   "dasym_marginal": 3.5962545815969847e-14,
+   "dasym_third_order": 3.454836834945273e-14
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/trees.h",
+   "tokens": 1505,
+   "mean": 0.032255058581625244,
+   "skew": 5.468175483326667,
+   "pos_frac": 0.992686170212766,
+   "dasym_marginal": -1.4675076962236894e-12,
+   "dasym_third_order": -1.4683635392484094e-12
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/uncompr.c",
+   "tokens": 327,
+   "mean": 0.0729037333577559,
+   "skew": -0.2636243840708737,
+   "pos_frac": 0.48466257668711654,
+   "dasym_marginal": 1.5270427692384283e-09,
+   "dasym_third_order": 1.5071464213629146e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/zconf.h",
+   "tokens": 1027,
+   "mean": 0.06447156116312974,
+   "skew": -3.005754966544806,
+   "pos_frac": 0.3762183235867446,
+   "dasym_marginal": 1.5832029855995355e-08,
+   "dasym_third_order": 1.5665701542325196e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/zlib.h",
+   "tokens": 1357,
+   "mean": 0.16466161326817524,
+   "skew": -8.842451191575577,
+   "pos_frac": 0.5117994100294986,
+   "dasym_marginal": 4.282144082575295e-07,
+   "dasym_third_order": 4.0345864353789534e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/zutil.c",
+   "tokens": 807,
+   "mean": 0.1282650325373935,
+   "skew": -5.066509795891216,
+   "pos_frac": 0.49255583126550867,
+   "dasym_marginal": 2.0064828331050211e-07,
+   "dasym_third_order": 1.941984174656956e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/zutil.h",
+   "tokens": 682,
+   "mean": 0.09384647442164482,
+   "skew": -3.81742798514964,
+   "pos_frac": 0.42584434654919234,
+   "dasym_marginal": 1.1855046513937017e-07,
+   "dasym_third_order": 1.158162112383305e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/blast/blast-test.c",
+   "tokens": 101,
+   "mean": 0.10307272237177637,
+   "skew": -0.4517812304569875,
+   "pos_frac": 0.53,
+   "dasym_marginal": 9.470714550509178e-08,
+   "dasym_third_order": 9.206219924717848e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/blast/blast.c",
+   "tokens": 1097,
+   "mean": 0.1292023784698863,
+   "skew": -0.41122864319293906,
+   "pos_frac": 0.5885036496350365,
+   "dasym_marginal": 8.53965773979791e-11,
+   "dasym_third_order": 8.513616489843279e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/crc32vx/crc32_vx.c",
+   "tokens": 605,
+   "mean": 0.06410377207168737,
+   "skew": -0.43229281327813723,
+   "pos_frac": 0.3890728476821192,
+   "dasym_marginal": 5.30815327104547e-10,
+   "dasym_third_order": 5.279956753835982e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/infback9/infback9.c",
+   "tokens": 1630,
+   "mean": 0.2523644636286652,
+   "skew": -0.11208034265729555,
+   "pos_frac": 0.6114180478821363,
+   "dasym_marginal": 4.6953451402878045e-12,
+   "dasym_third_order": 4.668762264258484e-12
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/infback9/infback9.h",
+   "tokens": 60,
+   "mean": 0.11022433401437834,
+   "skew": -4.514211941495026,
+   "pos_frac": 0.5254237288135594,
+   "dasym_marginal": 0.0003522129868013058,
+   "dasym_third_order": 0.0002417206451190299
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/infback9/inffix9.h",
+   "tokens": 1644,
+   "mean": 0.008454555393867738,
+   "skew": 10.344523880387408,
+   "pos_frac": 0.9951308581862447,
+   "dasym_marginal": -3.375639713229777e-13,
+   "dasym_third_order": -3.37876154207728e-13
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/infback9/inftree9.c",
+   "tokens": 858,
+   "mean": 0.11753121709457579,
+   "skew": -1.3303119640969903,
+   "pos_frac": 0.5799299883313885,
+   "dasym_marginal": 1.985202859854107e-09,
+   "dasym_third_order": 1.9766405117459002e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/infback9/inftree9.h",
+   "tokens": 51,
+   "mean": 0.10046578773192603,
+   "skew": -0.8141911742155137,
+   "pos_frac": 0.48,
+   "dasym_marginal": 2.172382518091792e-06,
+   "dasym_third_order": 2.064737868061988e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/iostream/zfstream.h",
+   "tokens": 346,
+   "mean": 0.07995446843149362,
+   "skew": -13.43523276508652,
+   "pos_frac": 0.4405797101449275,
+   "dasym_marginal": 0.00021418428060946532,
+   "dasym_third_order": 0.00011260171148278522
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/iostream2/zstream.h",
+   "tokens": 753,
+   "mean": 0.1442140551022447,
+   "skew": -13.919594410644049,
+   "pos_frac": 0.5146276595744681,
+   "dasym_marginal": 1.7281835982456257e-05,
+   "dasym_third_order": 1.3084596923938291e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/iostream3/zfstream.h",
+   "tokens": 544,
+   "mean": 0.15257855487445154,
+   "skew": -16.703399615613023,
+   "pos_frac": 0.5046040515653776,
+   "dasym_marginal": 0.00013988929206309347,
+   "dasym_third_order": 7.348317561507103e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/crypt.h",
+   "tokens": 330,
+   "mean": 0.06431153591677016,
+   "skew": -10.817042264932885,
+   "pos_frac": 0.3495440729483283,
+   "dasym_marginal": 7.444851814017283e-05,
+   "dasym_third_order": 5.058181077652215e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/ints.h",
+   "tokens": 157,
+   "mean": 0.17600504639643402,
+   "skew": -5.13503918689823,
+   "pos_frac": 0.5064102564102564,
+   "dasym_marginal": 2.8652725670448532e-05,
+   "dasym_third_order": 2.4083792247057538e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/ioapi.c",
+   "tokens": 753,
+   "mean": 0.1853039392524477,
+   "skew": -6.577035863490224,
+   "pos_frac": 0.5904255319148937,
+   "dasym_marginal": 7.31343838849254e-07,
+   "dasym_third_order": 6.894235541886689e-07
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/ioapi.h",
+   "tokens": 436,
+   "mean": 0.08810152889292257,
+   "skew": -4.902903378454598,
+   "pos_frac": 0.46436781609195404,
+   "dasym_marginal": 1.1951893293826748e-06,
+   "dasym_third_order": 1.1276275352293738e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/iowin32.c",
+   "tokens": 1316,
+   "mean": 0.11622288998359431,
+   "skew": -4.43241427399298,
+   "pos_frac": 0.488212927756654,
+   "dasym_marginal": 3.029249115587897e-08,
+   "dasym_third_order": 2.980930396169602e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/miniunz.c",
+   "tokens": 1745,
+   "mean": 0.24203200021348706,
+   "skew": -0.44158291308377773,
+   "pos_frac": 0.5848623853211009,
+   "dasym_marginal": 2.4636974254548034e-11,
+   "dasym_third_order": 2.4590753182649978e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/minizip.c",
+   "tokens": 1381,
+   "mean": 0.2324633179776154,
+   "skew": -0.4605537160366473,
+   "pos_frac": 0.5804347826086956,
+   "dasym_marginal": 5.273821326816212e-11,
+   "dasym_third_order": 5.261603478875533e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/mztools.c",
+   "tokens": 778,
+   "mean": 0.07486795667488773,
+   "skew": -0.2522935191746023,
+   "pos_frac": 0.4015444015444015,
+   "dasym_marginal": 1.1782605135251617e-10,
+   "dasym_third_order": 1.1713088915060982e-10
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/skipset.h",
+   "tokens": 925,
+   "mean": 0.1395246803157938,
+   "skew": -11.674456976265475,
+   "pos_frac": 0.5194805194805194,
+   "dasym_marginal": 3.981629134508678e-06,
+   "dasym_third_order": 3.42432158918741e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/unzip.c",
+   "tokens": 5411,
+   "mean": 0.18539314653317227,
+   "skew": 0.06627606712949531,
+   "pos_frac": 0.5898336414048059,
+   "dasym_marginal": -6.115892297806069e-14,
+   "dasym_third_order": -6.130646987193709e-14
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/unzip.h",
+   "tokens": 514,
+   "mean": 0.11730868371573316,
+   "skew": -7.977483193040156,
+   "pos_frac": 0.5497076023391813,
+   "dasym_marginal": 5.34588889066463e-06,
+   "dasym_third_order": 4.694439271097714e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/zip.c",
+   "tokens": 7076,
+   "mean": 0.14959576643080685,
+   "skew": 0.08508179263138858,
+   "pos_frac": 0.5458657243816254,
+   "dasym_marginal": -3.4366324985302886e-14,
+   "dasym_third_order": -3.446459526031893e-14
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/minizip/zip.h",
+   "tokens": 610,
+   "mean": 0.22170717749019678,
+   "skew": -7.759901878916896,
+   "pos_frac": 0.5944170771756979,
+   "dasym_marginal": 2.7984380490174654e-06,
+   "dasym_third_order": 2.525238946118172e-06
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/puff/bin-writer.c",
+   "tokens": 64,
+   "mean": -0.0088987369868602,
+   "skew": -2.4526820936006275,
+   "pos_frac": 0.36507936507936506,
+   "dasym_marginal": 2.0423113459155256e-05,
+   "dasym_third_order": 1.837098722154695e-05
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/puff/puff.c",
+   "tokens": 1490,
+   "mean": 0.14406463738909658,
+   "skew": -0.34688299770531167,
+   "pos_frac": 0.5151108126259234,
+   "dasym_marginal": 2.6736245206084993e-11,
+   "dasym_third_order": 2.6669748807268718e-11
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/puff/pufftest.c",
+   "tokens": 479,
+   "mean": 0.12785799732165443,
+   "skew": -0.5375032239101764,
+   "pos_frac": 0.4602510460251046,
+   "dasym_marginal": 1.3976162889461593e-09,
+   "dasym_third_order": 1.3892905172552422e-09
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/contrib/testzlib/testzlib.c",
+   "tokens": 799,
+   "mean": 0.08761499760001927,
+   "skew": -3.8531549563093344,
+   "pos_frac": 0.48370927318295737,
+   "dasym_marginal": 7.743007300867745e-08,
+   "dasym_third_order": 7.58707742124574e-08
+  },
+  {
+   "file": "/mnt/e/LOGIC AI/代码逻辑流质量评测工具验证报告/v2/repos/code-logic-quality/zlib/examples/enough.c",
+   "tokens": 1437,
+   "mean": 0.16780311224896097,
+   "skew": -2.787918106266563,
+   "pos_frac": 0.5612813370473537,
+   "dasym_marginal": 4.320515028819122e-09,
+   "dasym_third_order": 4.292011271357368e-09
+  }
+ ]
+}

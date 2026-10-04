@@ -24,6 +24,20 @@ Chinese/English), it is UTF-8 encoded, and the Chinese print output is kept unch
 | --- | --- | --- | --- | --- | --- |
 | 作者数据集（74 文件；深度 3/5/7） | +0.2031 / +0.1337 / +0.1273 | −30.919 | +2.3954e−09 | +2.3386e−09 | 74/74 |
 | Python 标准库（55 文件） | +0.2115 | −23.917 | +1.5246e−10 | +1.5123e−10 | 55/55 |
+| C 四仓库（168 文件） | +0.2584 | −1.0575 | ≈1e−16（见下） | ≈8e−17 | 163/168（三阶预言 166/168） |
+
+**数值精度说明**：D_asym 是三阶量，δ 越小越接近双精度下限。脚本用恒等式
+D_asym = Σ_τ (P_f + P_b) log(P_f/P_b) 配合 `log1p` 计算（避免"两个 KL 相减"的大项相消）。
+C 语料的池化 δ 极小，池化值 ≈1e−16 已落在双精度地板，**只有逐文件符号计数可解读**；
+其 5 个不一致文件中，4 个是 68–102 token 且 S(δ) ≈ 0 的短头文件，1 个（tif_fax3sm.c）是机器生成的数值表、
+差值为 ~1e−17，符号不可分辨。Python 两语料的池化值（1e−9、1e−10）远高于地板，可正常解读。
+
+**Numerical precision note**: D_asym is a third-order quantity, so the smaller δ is, the closer it sits to the
+double-precision floor. The scripts evaluate the identity D_asym = Σ_τ (P_f + P_b) log(P_f/P_b) with `log1p`
+(avoiding cancellation between two KLs). For the C corpus the pooled δ is so small that the pooled value ≈1e−16
+lies at the floor and **only the per-file sign counts are interpretable**; of its 5 mismatching files, 4 are
+68–102-token headers with S(δ) ≈ 0 and 1 (tif_fax3sm.c) is a machine-generated numeric table whose difference
+(~1e−17) has no resolvable sign. The Python pooled values (1e−9, 1e−10) are far above the floor.
 
 平滑敏感性检查（add-0.25 / 0.5 / 1 / 2）：作者 74/74、标准库 55/55 全部稳定（见 `check_smoothing_sensitivity.py`，位于论文目录）。
 
@@ -105,7 +119,7 @@ switches stdout to UTF-8 at startup (the originals relied on the terminal enviro
 | `perm_stdlib.json` | Python 标准库语料的置换检验结果 / permutation-test results on the Python standard-library corpus | `python d_asym_permutation.py --roots <Python 标准库目录> --out perm_stdlib.json` / `python d_asym_permutation.py --roots <Python stdlib directory> --out perm_stdlib.json` |
 | `perm_c.json` | C 四仓库（musl、libuv、libtiff、zlib）的置换检验结果 / permutation-test results on the four C repositories (musl, libuv, libtiff, zlib) | `python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> --depth 5 --nperm 1000 --out perm_c.json`（在 WSL 或 Linux 下运行 / run under WSL or Linux） |
 | `files_author_d5.txt`、`files_stdlib.txt` | 记录的文件清单（每行一个路径），用于精确复现 / recorded file lists (one path per line) for exact reproduction | 由 `perm_depth5.json`、`perm_stdlib.json` 的 `per_file[].file` 提取 / extracted from `per_file[].file` |
-| `valid_depth3/5/7.json`、`valid_stdlib.json` | **定理 3 的检验**结果：⟨ΔS⟩、S(δ)、边际对的精确 KL 差 D_asym、三阶预言、逐文件符号一致数 / **the test of Theorem 3**: ⟨ΔS⟩, S(δ), the exact marginal-pair D_asym, its third-order prediction, and the per-file sign-agreement counts | `python d_asym_permutation.py --filelist files_author_d5.txt --depth 5 --nperm 0 --out valid_depth5.json`（其余同理 / likewise for the others） |
+| `valid_depth3/5/7.json`、`valid_stdlib.json`、`valid_c.json` | **定理 3 的检验**结果：⟨ΔS⟩、S(δ)、边际对的精确 KL 差 D_asym、三阶预言、逐文件符号一致数 / **the test of Theorem 3**: ⟨ΔS⟩, S(δ), the exact marginal-pair D_asym, its third-order prediction, and the per-file sign-agreement counts | `python d_asym_permutation.py --filelist files_author_d5.txt --depth 5 --nperm 0 --out valid_depth5.json`（其余同理；C 语料用 `c_asym_permutation.py --roots ... --maxfiles 60 --nperm 0 --out valid_c.json`）/ likewise for the others; for the C corpus use `c_asym_permutation.py --roots ... --maxfiles 60 --nperm 0 --out valid_c.json` |
 
 ## 许可 / License
 
