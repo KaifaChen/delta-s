@@ -173,7 +173,7 @@ def fig6():
     s += text(X(0.02), Y(40), "S(delta)", 12)
     s += text(X(0.04), Y(0) + 20, "<DeltaS> = 0".replace("<", "&lt;").replace(">", "&gt;"), 10, color="#333", anchor="end")
     s += text(160, 350, "red: Python author dataset (74); blue: Python stdlib (55); green: four C repos (168)", 12, color="#333")
-    s += text(160, 368, "Two independent empirical facts: &lt;DeltaS&gt;&gt;0 (directionality exists) and S(delta)&lt;0 (negative third-order skew); the test of Theorem 3 is reported in Sec. 5.5 (exact KL difference of the marginals: 129/129 Python, 163/168 C)", 11, color="#c0392b")
+    s += text(160, 368, "Two independent empirical facts: &lt;DeltaS&gt;&gt;0 (directionality exists) and S(delta)&lt;0 (negative third-order skew); the test of Theorem 3 is reported in Sec. 5.5 (exact KL difference of the marginals: 129/129 Python, 164/168 C)", 11, color="#c0392b")
     return s + svg_tail()
 
 def main():
