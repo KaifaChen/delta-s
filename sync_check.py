@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-sync_check.py — 数值验证 §3.6 桥接（命题 2/3：环上的双向同步性）
+sync_check.py — 数值验证 §3.7 桥接（命题 2/3：环上的双向同步性）
 
 验证三点：
  A. 漂移公式：真相位 φ0 对移位相位 ψ 的过去对数似然比，
@@ -9,7 +9,7 @@ sync_check.py — 数值验证 §3.6 桥接（命题 2/3：环上的双向同步
  C. 分布相同 ⟹ 漂移为 0、相位不可辨认（后验停在先验）——最小性为何要把它们合并。
  D. 不相交支撑（三状态反例式）⟹ 一个符号即锁定相位。
 
-sync_check.py — numerical verification of the §3.6 bridge (Props. 2/3: two-way synchronization on a ring).
+sync_check.py — numerical verification of the §3.7 bridge (Props. 2/3: two-way synchronization on a ring).
 Checks: (A) drift formula: for the true phase φ0 versus the shifted phase ψ, the past log-likelihood ratio has per-cycle expectation = (1/k) Σ_i D(P_i || P_{i+(ψ-φ0)}) > 0 (when the P_i are pairwise distinct); (B) pairwise distinct distributions (minimality) ⟹ the phase is asymptotically determined by the infinite past / infinite future (posterior → 1); (C) identical distributions ⟹ zero drift and an unidentifiable phase (the posterior stays at the prior) — the reason minimality merges them; (D) disjoint supports (the three-state counterexample style) ⟹ a single symbol locks the phase.
 """
 import math

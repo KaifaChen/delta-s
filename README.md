@@ -64,9 +64,9 @@ comes only from the few edited files and does not change any conclusion).
 | 脚本 / Script | 功能 / Purpose | 依赖 / Dependencies |
 | --- | --- | --- |
 | `delta_expansion_check.py` | 数值验证 §4.7 差向量展开（恒等式 4.7.1、Bernoulli 例、收敛阶检查、ε-机混合例）/ Numerical check of the §4.7 difference-vector expansion (identity 4.7.1, the Bernoulli example, the convergence-order check, the ε-machine mixture example) | 仅标准库 / stdlib only |
-| `sync_check.py` | 数值验证 §3.6 桥接（命题 2/3：环上的双向同步性）/ Numerical check of the §3.6 bridge (Props. 2/3: two-way synchronization on a ring) | 仅标准库 / stdlib only |
-| `d_asym_permutation.py` | §5.4 置换检验实验（Python AST 结构路径协议；打乱符号 / 打乱路径两类零假设）；同时输出 **⟨ΔS⟩**（平均局部不可逆度）与 **定理 3 的检验**（边际对的精确 KL 差 D_asym 及其三阶预言）/ §5.4 permutation-test experiment (Python-AST protocol; shuffle-symbols / shuffle-paths nulls); also reports **⟨ΔS⟩** and the **test of Theorem 3** (exact KL difference between the two marginals plus its third-order prediction) | 仅标准库 / stdlib only |
-| `c_asym_permutation.py` | §5.4 C 语料的同协议验证（tree-sitter C 解析），输出同上 / §5.4 same-protocol verification on a C corpus (tree-sitter C parsing), same outputs | tree-sitter 与 tree-sitter-c（`pip install tree-sitter tree-sitter-c`，两包版本需匹配，见脚本注释；在 WSL 或 Linux 下运行）/ tree-sitter plus tree-sitter-c (`pip install tree-sitter tree-sitter-c`; the two packages' versions must match, see the script comments; run under WSL or Linux) |
+| `sync_check.py` | 数值验证 §3.7 桥接（命题 2/3：环上的双向同步性）/ Numerical check of the §3.7 bridge (Props. 2/3: two-way synchronization on a ring) | 仅标准库 / stdlib only |
+| `d_asym_permutation.py` | §5.3/§5.5 置换检验实验（Python AST 结构路径协议；打乱符号 / 打乱路径两类零假设）；同时输出 **⟨ΔS⟩**（平均局部不可逆度）与 **定理 3 的检验**（边际对的精确 KL 差 D_asym 及其三阶预言）/ §5.4 permutation-test experiment (Python-AST protocol; shuffle-symbols / shuffle-paths nulls); also reports **⟨ΔS⟩** and the **test of Theorem 3** (exact KL difference between the two marginals plus its third-order prediction) | 仅标准库 / stdlib only |
+| `c_asym_permutation.py` | §5.3/§5.5 C 语料的同协议验证（tree-sitter C 解析），输出同上 / §5.4 same-protocol verification on a C corpus (tree-sitter C parsing), same outputs | tree-sitter 与 tree-sitter-c（`pip install tree-sitter tree-sitter-c`，两包版本需匹配，见脚本注释；在 WSL 或 Linux 下运行）/ tree-sitter plus tree-sitter-c (`pip install tree-sitter tree-sitter-c`; the two packages' versions must match, see the script comments; run under WSL or Linux) |
 | `symbolic_check.py` | §4.6 六步推导的通用符号验证 / General symbolic verification of the six-step derivation in §4.6 | sympy（`pip install sympy`）/ sympy (`pip install sympy`) |
 | `figs.py` | 生成论文 6 张示意图（SVG；本仓库版图内文字为英文）/ Generates the paper's 6 schematic figures (SVG; the figure text in this repository version is English) | 仅标准库 / stdlib only |
 | `validate_svg.py` | 逐个检查 fig*.svg 是否为 well-formed XML / Checks each fig*.svg for well-formed XML | 仅标准库 / stdlib only |
@@ -90,13 +90,13 @@ python sync_check.py
 # §4.6 符号验证（需 sympy） / §4.6 symbolic check (requires sympy)
 python symbolic_check.py
 
-# §5.4 置换检验（Python 语料） / §5.4 permutation test (Python corpus)
+# §5.3/§5.5 置换检验（Python 语料） / §5.3/§5.5 permutation test (Python corpus)
 python d_asym_permutation.py --roots <dir...> --depth 5 --nperm 1000 --out perm_depth5.json
 
 # 精确复现既有结果（用记录的文件清单，无需重扫目录）/ exact reproduction from a recorded file list
 python d_asym_permutation.py --filelist files_author_d5.txt --depth 5 --nperm 0 --out valid_depth5.json
 
-# §5.4 置换检验（C 语料；WSL/Linux + tree-sitter） / §5.4 permutation test (C corpus; WSL/Linux + tree-sitter)
+# §5.3/§5.5 置换检验（C 语料；WSL/Linux + tree-sitter） / §5.3/§5.5 permutation test (C corpus; WSL/Linux + tree-sitter)
 python c_asym_permutation.py --roots <musl> <libuv> <libtiff> <zlib> --depth 5 --nperm 1000 --out perm_c.json
 
 # 生成 6 张 SVG 示意图 / generate the 6 SVG figures

@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-d_asym_permutation.py — §5.4 置换检验实验（Python AST 结构路径口径）
+d_asym_permutation.py — §5.3/§5.5 置换检验实验（Python AST 结构路径口径）
 
-协议（对应工作稿 §5.2，纯标准库实现，可复现）：
+协议（见论文 §5.3，纯标准库实现，可复现）：
  1. ast 解析 Python 源码，按源码顺序提取符号叶子（Name/Constant/keyword/operator）；
     每个 token 记 (结构路径 p, 符号 τ)：p = 祖先节点类型链（深度 ≤ depth）。
  2. 正向计数 P_f(τ|p)：位置 i 的路径 p_i 预测符号 τ_i；
@@ -24,8 +24,8 @@ d_asym_permutation.py — §5.4 置换检验实验（Python AST 结构路径口�
   python d_asym_permutation.py --filelist files.txt --depth 5 --nperm 0 --out result.json
         （--filelist 用于精确复现既有结果：文件清单每行一个路径）
 
-d_asym_permutation.py — the §5.4 permutation-test experiment (Python-AST structural-path protocol).
-Protocol (per working draft §5.2; pure standard library, reproducible): (1) parse Python source with ast and extract the symbolic leaves (Name/Constant/keyword/operator) in source order; each token is recorded as (structural path p, symbol τ), where p = the chain of ancestor node types (depth ≤ depth). (2) Forward counts P_f(τ|p): the path p_i at position i predicts the symbol τ_i; backward counts P_b(τ|p'): the path p_{i+1} at the next position predicts the current symbol τ_i; add-1 smoothing. (3) Per-token log-ratio log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}); its empirical mean ⟨DeltaS⟩ estimates the local irreversibility ΔS = D_KL(P_f∥P_b) ≥ 0 (NOT the object of Theorem 3, D_asym). (4) Also reported: the directional skew S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2} with δ = backward symbol marginal − forward symbol marginal. (5) The test of Theorem 3: the exact KL difference between the same two marginals, Σ P_f log(P_f/P_b) − Σ P_b log(P_b/P_f) (no expansion), together with the third-order prediction −(1/6)Σδ³/P_f² and the sign relations. (6) Two null-hypothesis permutation tests (the model is re-estimated after each permutation): (a) shuffle the symbol sequence τ (path order preserved); (b) shuffle the path sequence p (symbol order preserved). Self-check: the means of the permutation distributions should be ≈ 0. Usage: python d_asym_permutation.py --roots <dir...> [--depth 5] [--nperm 1000] [--maxfiles 0] [--seed 20260929] [--out result.json]; or --filelist files.txt for exact reproduction of an existing file set.
+d_asym_permutation.py — the §5.3/§5.5 permutation-test experiment (Python-AST structural-path protocol).
+Protocol (paper §5.3; pure standard library, reproducible): (1) parse Python source with ast and extract the symbolic leaves (Name/Constant/keyword/operator) in source order; each token is recorded as (structural path p, symbol τ), where p = the chain of ancestor node types (depth ≤ depth). (2) Forward counts P_f(τ|p): the path p_i at position i predicts the symbol τ_i; backward counts P_b(τ|p'): the path p_{i+1} at the next position predicts the current symbol τ_i; add-1 smoothing. (3) Per-token log-ratio log P_f(τ_i|p_i) − log P_b(τ_i|p_{i+1}); its empirical mean ⟨DeltaS⟩ estimates the local irreversibility ΔS = D_KL(P_f∥P_b) ≥ 0 (NOT the object of Theorem 3, D_asym). (4) Also reported: the directional skew S(δ) = Σδ³/P_f² / (Σδ²/P_f)^{3/2} with δ = backward symbol marginal − forward symbol marginal. (5) The test of Theorem 3: the exact KL difference between the same two marginals, Σ P_f log(P_f/P_b) − Σ P_b log(P_b/P_f) (no expansion), together with the third-order prediction −(1/6)Σδ³/P_f² and the sign relations. (6) Two null-hypothesis permutation tests (the model is re-estimated after each permutation): (a) shuffle the symbol sequence τ (path order preserved); (b) shuffle the path sequence p (symbol order preserved). Self-check: the means of the permutation distributions should be ≈ 0. Usage: python d_asym_permutation.py --roots <dir...> [--depth 5] [--nperm 1000] [--maxfiles 0] [--seed 20260929] [--out result.json]; or --filelist files.txt for exact reproduction of an existing file set.
 """
 import ast
 import os
