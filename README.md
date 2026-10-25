@@ -41,25 +41,26 @@ lies at the floor and **only the per-file sign counts are interpretable**; all 4
 
 平滑敏感性检查（add-0.25 / 0.5 / 1 / 2）：作者 74/74、标准库 55/55 全部稳定（见 `check_smoothing_sensitivity.py`，位于论文目录）。
 
-## 结构表示：⟨ΔS⟩ 是表示伪信号 / Structural representation: ⟨ΔS⟩ is an artefact
+## 结构表示：2×2×2 消融 / Structural representation: a 2x2x2 ablation
 
-完整 AST 祖先链由 `ast.parse` 对整个文件**事后**解析得到：某些祖先节点只在读到后面的 token 后才确定（`x = foo(a)` 中读入 `x` 时 `Assign` 尚未出现）。审计结果：约 39% 的 token 至少有一个祖先起点不早于 token 本身，因此 full-AST 路径**不是前缀的函数**。
+完整 AST 祖先链由 `ast.parse` 对整个文件**事后**解析得到：某些祖先节点只在读到后面的 token 后才确定（`x = foo(a)` 中读入 `x` 时 `Assign` 尚未出现）；约 39% 的 token 至少有一个祖先起点不早于 token 本身。为检验结论是否依赖这一点、以及是否依赖 token 顺序，做了 2×2×2 消融（路径 × 顺序 × 算子）：
 
-进一步的四种口径对照（作者数据集 74 文件）表明，⟨ΔS⟩ 的符号由两个自由度控制——祖先链是否含未来节点、token 是否按源码序：
+| 路径 | 顺序 | 算子 | token 数 | ⟨ΔS⟩ | p |
+| --- | --- | --- | ---: | ---: | ---: |
+| 完整 | AST | 保留 | 39,129 | +0.1338 | 0.003 |
+| 完整 | AST | 丢弃 | 33,783 | +0.1336 | 0.003 |
+| 完整 | 源码 | 保留 | 39,129 | +0.1389 | 0.003 |
+| 完整 | 源码 | 丢弃 | 33,783 | +0.1395 | 0.003 |
+| 截断 | AST | 保留 | 39,129 | +0.1594 | 0.003 |
+| 截断 | AST | 丢弃 | 33,783 | −0.0320 | 1.00 |
+| 截断 | 源码 | 保留 | 39,129 | +0.1579 | 0.003 |
+| 截断 | 源码 | 丢弃 | 33,783 | −0.0333 | 1.00 |
 
-| 口径 / Convention | token 顺序 | 路径 | ⟨ΔS⟩ (d=5) |
-| --- | --- | --- | ---: |
-| full-AST | AST 字段序 | 完整（含未来祖先） | +0.1337 |
-| full + 源码序 | 源码序 | 完整（含未来祖先） | +0.1395 |
-| 截断 + AST 序 | AST 字段序 | 截断至第一个未来祖先 | +0.1594 |
-| **截断 + 源码序** | 源码序 | 截断至第一个未来祖先 | **−0.0333** |
-| **tokenize 因果栈** | 源码序 | 已读前缀结构栈 | **−0.0182**（p=1.00） |
+**结论**：token 顺序无关；未来祖先不是结论的来源（保留算子时截断反而升高）；唯一翻负的组合是"截断 + 丢弃算子"，它把 17.4% 的算子 token 从符号表移除，改变了被测量的统计量，不代表本文协议。**方向性结论稳健**；边界是"依赖保留算子的完整符号表"。另：tokenize 因果栈（不同结构词表、无算子）给 −0.018（p=1.00），属**不同统计量**，不能用来否证。
 
-**在源码顺序、因果可测的表示下 ⟨ΔS⟩ 不再为正**（两个独立表示一致，且随深度不稳定）。因此代码域方向性**不予成立**；正的读数应作为表示伪信号报告。prefix-safe 子集（18,181 token，46.5%）的 +0.1883 仍沿用 AST 字段序与 AST 词表，属同一类伪信号。引理 1 的保守性只在其前提（p 为因果态的粗粒化）下成立，对任何实测口径均未获证明。
+The 2x2x2 ablation (path x order x operators) shows that the positive ⟨ΔS⟩ is insensitive to token order and to future ancestors (truncation even raises it when operators are kept); the only negative combination is truncation + dropping operators, which removes 17.4% of the tokens and does not represent this protocol. A tokenize-based causal stack (a different vocabulary, no operators) gives −0.018 and measures a different statistic. Script: `ablate_representation.py`.
 
-The four conventions above show that the sign of ⟨ΔS⟩ is controlled by two degrees of freedom of the representation — whether the ancestor chain contains future nodes, and whether tokens are in source order. Under a source-ordered, causal representation ⟨ΔS⟩ is **not positive** (two independent representations agree, and neither is stable across depth). Hence the directionality of code is **not established**; positive readings are representational artefacts. The prefix-safe subset (+0.1883) still uses AST field order and the AST inventory, so it is an artefact of the same kind. The conservativeness in Lemma 1 holds only under its premise and is unproven for any measured convention.
-
-脚本 / Scripts: `prefix_safe_dasym.py`、`truncated_ast_dasym.py`（截断 / 源码序 / 完整路径）、`causal_stack_dasym.py`（tokenize 因果栈）、`quantify_prefix_leak.py`、`verify_prefix_leak.py`、`verify_token_order.py`。
+脚本 / Scripts: `ablate_representation.py`、`prefix_safe_dasym.py`、`truncated_ast_dasym.py`、`causal_stack_dasym.py`、`quantify_prefix_leak.py`、`verify_prefix_leak.py`、`verify_token_order.py`。
 
 The per-token statistic log P_f − log P_b is a **log-ratio**; its empirical mean ⟨ΔS⟩ equals, in expectation,
 **ΔS = D_KL(P_f∥P_b) ≥ 0** (the average local irreversibility) and is therefore never negative. Theorem 3 concerns
