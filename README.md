@@ -41,20 +41,25 @@ lies at the floor and **only the per-file sign counts are interpretable**; all 4
 
 平滑敏感性检查（add-0.25 / 0.5 / 1 / 2）：作者 74/74、标准库 55/55 全部稳定（见 `check_smoothing_sensitivity.py`，位于论文目录）。
 
-## 结构表示：full-AST 与 prefix-safe / Structural representation: full-AST vs prefix-safe
+## 结构表示：⟨ΔS⟩ 是表示伪信号 / Structural representation: ⟨ΔS⟩ is an artefact
 
-完整 AST 祖先链由 `ast.parse` 对整个文件**事后**解析得到：某些祖先节点只在读到后面的 token 后才确定（`x = foo(a)` 中读入 `x` 时 `Assign` 尚未出现）。审计结果：约 39% 的 token 至少有一个祖先起点不早于 token 本身，因此 full-AST 路径**不是前缀的函数**，只能作对照。**prefix-safe 子集**只保留"所有**有位置**祖先都严格早于该 token"的 token（无位置的算子不计入），占作者数据集 46.5%，保证结构是已读前缀的函数。
+完整 AST 祖先链由 `ast.parse` 对整个文件**事后**解析得到：某些祖先节点只在读到后面的 token 后才确定（`x = foo(a)` 中读入 `x` 时 `Assign` 尚未出现）。审计结果：约 39% 的 token 至少有一个祖先起点不早于 token 本身，因此 full-AST 路径**不是前缀的函数**。
 
-| 口径 / Convention | token 数 | ⟨ΔS⟩ | 单侧 p | 逐文件为正 |
-| --- | ---: | ---: | ---: | ---: |
-| full-AST（对照 / control） | 39,129 | +0.1338 | 0.001 | 74/74 |
-| **prefix-safe（主 / main）** | 18,181 | **+0.1883** | 0.001 | 71/71 |
+进一步的四种口径对照（作者数据集 74 文件）表明，⟨ΔS⟩ 的符号由两个自由度控制——祖先链是否含未来节点、token 是否按源码序：
 
-去掉未来信息后 ⟨ΔS⟩ **反而更大**：方向性不是前缀泄漏的产物。注意：引理 1 的保守性只在其前提（p 为因果态的粗粒化）下成立，对两种口径均未获证明；正式的前缀因果表示（tokenize 结构栈）仍需补做。
+| 口径 / Convention | token 顺序 | 路径 | ⟨ΔS⟩ (d=5) |
+| --- | --- | --- | ---: |
+| full-AST | AST 字段序 | 完整（含未来祖先） | +0.1337 |
+| full + 源码序 | 源码序 | 完整（含未来祖先） | +0.1395 |
+| 截断 + AST 序 | AST 字段序 | 截断至第一个未来祖先 | +0.1594 |
+| **截断 + 源码序** | 源码序 | 截断至第一个未来祖先 | **−0.0333** |
+| **tokenize 因果栈** | 源码序 | 已读前缀结构栈 | **−0.0182**（p=1.00） |
 
-The full AST ancestor chain is produced by `ast.parse` in one **post-hoc** pass: some ancestors are determined only by later tokens (for `x` in `x = foo(a)` the `Assign` node does not yet exist). About 39% of tokens have at least one ancestor that starts no earlier than the token itself, so a full-AST path is **not a function of the prefix** and serves only as a control. The **prefix-safe** subset keeps only tokens all of whose **positioned** ancestors start strictly earlier (operators carry no position and are excluded), covering 46.5% of the author's dataset. Removing future information makes ⟨ΔS⟩ **larger** (+0.1883 vs +0.1338): directionality is not an artefact of prefix leakage. Note that the conservativeness in Lemma 1 holds only under its premise (p a coarsening of the causal state) and is unproven for both conventions; a genuine prefix-causal representation (a tokenize-based structure stack) remains to be done.
+**在源码顺序、因果可测的表示下 ⟨ΔS⟩ 不再为正**（两个独立表示一致，且随深度不稳定）。因此代码域方向性**不予成立**；正的读数应作为表示伪信号报告。prefix-safe 子集（18,181 token，46.5%）的 +0.1883 仍沿用 AST 字段序与 AST 词表，属同一类伪信号。引理 1 的保守性只在其前提（p 为因果态的粗粒化）下成立，对任何实测口径均未获证明。
 
-脚本 / Scripts: `prefix_safe_dasym.py`（写出 `prefix_safe_result.json`）、`quantify_prefix_leak.py`、`verify_prefix_leak.py`、`verify_token_order.py`。
+The four conventions above show that the sign of ⟨ΔS⟩ is controlled by two degrees of freedom of the representation — whether the ancestor chain contains future nodes, and whether tokens are in source order. Under a source-ordered, causal representation ⟨ΔS⟩ is **not positive** (two independent representations agree, and neither is stable across depth). Hence the directionality of code is **not established**; positive readings are representational artefacts. The prefix-safe subset (+0.1883) still uses AST field order and the AST inventory, so it is an artefact of the same kind. The conservativeness in Lemma 1 holds only under its premise and is unproven for any measured convention.
+
+脚本 / Scripts: `prefix_safe_dasym.py`、`truncated_ast_dasym.py`（截断 / 源码序 / 完整路径）、`causal_stack_dasym.py`（tokenize 因果栈）、`quantify_prefix_leak.py`、`verify_prefix_leak.py`、`verify_token_order.py`。
 
 The per-token statistic log P_f − log P_b is a **log-ratio**; its empirical mean ⟨ΔS⟩ equals, in expectation,
 **ΔS = D_KL(P_f∥P_b) ≥ 0** (the average local irreversibility) and is therefore never negative. Theorem 3 concerns
