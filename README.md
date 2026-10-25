@@ -41,6 +41,21 @@ lies at the floor and **only the per-file sign counts are interpretable**; all 4
 
 平滑敏感性检查（add-0.25 / 0.5 / 1 / 2）：作者 74/74、标准库 55/55 全部稳定（见 `check_smoothing_sensitivity.py`，位于论文目录）。
 
+## 结构表示：full-AST 与 prefix-safe / Structural representation: full-AST vs prefix-safe
+
+完整 AST 祖先链由 `ast.parse` 对整个文件**事后**解析得到：某些祖先节点只在读到后面的 token 后才确定（`x = foo(a)` 中读入 `x` 时 `Assign` 尚未出现）。审计结果：约 39% 的 token 至少有一个祖先起点不早于 token 本身，因此 full-AST 路径**不是前缀的函数**，只能作对照。**prefix-safe 子集**只保留"所有**有位置**祖先都严格早于该 token"的 token（无位置的算子不计入），占作者数据集 46.5%，保证结构是已读前缀的函数。
+
+| 口径 / Convention | token 数 | ⟨ΔS⟩ | 单侧 p | 逐文件为正 |
+| --- | ---: | ---: | ---: | ---: |
+| full-AST（对照 / control） | 39,129 | +0.1338 | 0.001 | 74/74 |
+| **prefix-safe（主 / main）** | 18,181 | **+0.1883** | 0.001 | 71/71 |
+
+去掉未来信息后 ⟨ΔS⟩ **反而更大**：方向性不是前缀泄漏的产物。注意：引理 1 的保守性只在其前提（p 为因果态的粗粒化）下成立，对两种口径均未获证明；正式的前缀因果表示（tokenize 结构栈）仍需补做。
+
+The full AST ancestor chain is produced by `ast.parse` in one **post-hoc** pass: some ancestors are determined only by later tokens (for `x` in `x = foo(a)` the `Assign` node does not yet exist). About 39% of tokens have at least one ancestor that starts no earlier than the token itself, so a full-AST path is **not a function of the prefix** and serves only as a control. The **prefix-safe** subset keeps only tokens all of whose **positioned** ancestors start strictly earlier (operators carry no position and are excluded), covering 46.5% of the author's dataset. Removing future information makes ⟨ΔS⟩ **larger** (+0.1883 vs +0.1338): directionality is not an artefact of prefix leakage. Note that the conservativeness in Lemma 1 holds only under its premise (p a coarsening of the causal state) and is unproven for both conventions; a genuine prefix-causal representation (a tokenize-based structure stack) remains to be done.
+
+脚本 / Scripts: `prefix_safe_dasym.py`（写出 `prefix_safe_result.json`）、`quantify_prefix_leak.py`、`verify_prefix_leak.py`、`verify_token_order.py`。
+
 The per-token statistic log P_f − log P_b is a **log-ratio**; its empirical mean ⟨ΔS⟩ equals, in expectation,
 **ΔS = D_KL(P_f∥P_b) ≥ 0** (the average local irreversibility) and is therefore never negative. Theorem 3 concerns
 the **asymmetric difference** D_asym = D_KL(P_f∥P_b) − D_KL(P_b∥P_f) (a difference of two KLs, signed, third order at
