@@ -1,0 +1,383 @@
+{
+ "files": 74,
+ "tokens_all": 39129,
+ "tokens_safe": 18181,
+ "nopos": 5346,
+ "results": {
+  "full-AST": {
+   "n": 39129,
+   "mean": 0.13381592717854576,
+   "pos_frac": 0.4839245553056635,
+   "skew": -31.12878137457621,
+   "null_mean": 5.742884387060728e-05,
+   "p_one": 0.000999000999000999,
+   "null_max": 0.008772093415881168
+  },
+  "prefix-safe": {
+   "n": 18181,
+   "mean": 0.1883153035605964,
+   "pos_frac": 0.5497799779977998,
+   "skew": -1.3799753427912822,
+   "null_mean": -9.360679583013145e-05,
+   "p_one": 0.000999000999000999,
+   "null_max": 0.0161942764542669
+  }
+ },
+ "per_file_safe": [
+  {
+   "file": "2d_transient_check.py",
+   "mean": 0.177778866618316,
+   "skew": -0.74726471775708
+  },
+  {
+   "file": "alpha1_exact_wz_check.py",
+   "mean": 0.1148507597376986,
+   "skew": -2.193110624773415
+  },
+  {
+   "file": "anchor_alignment_check.py",
+   "mean": 0.22628969252938244,
+   "skew": -1.6973368495830254
+  },
+  {
+   "file": "anchoring_transport_check.py",
+   "mean": 0.21788376699784184,
+   "skew": -2.3153150456652423
+  },
+  {
+   "file": "causal_rectification_chain.py",
+   "mean": 0.3097361871033594,
+   "skew": -0.6270025684125117
+  },
+  {
+   "file": "covariant_fd_convergence.py",
+   "mean": 0.09008087437913437,
+   "skew": -8.718533162913385
+  },
+  {
+   "file": "cqac_dictionary.py",
+   "mean": 0.08918528434782583,
+   "skew": -0.31382387128539435
+  },
+  {
+   "file": "cqac_dictionary_d3.py",
+   "mean": 0.08651092964720053,
+   "skew": -0.27902297397090803
+  },
+  {
+   "file": "cqac_dictionary_v2.py",
+   "mean": 0.1464073293601126,
+   "skew": -0.7585122869650848
+  },
+  {
+   "file": "dark_energy_joint_check.py",
+   "mean": 0.08040551644796302,
+   "skew": -1.3363062095621063
+  },
+  {
+   "file": "epsilon_machine_Tijk.py",
+   "mean": 0.2012855470042627,
+   "skew": -4.150737022204519
+  },
+  {
+   "file": "frame_theorem_general.py",
+   "mean": 0.1196787771817995,
+   "skew": -3.7500000000000084
+  },
+  {
+   "file": "gauge_emergence_check.py",
+   "mean": 0.13139780189554748,
+   "skew": -3.338851794205461
+  },
+  {
+   "file": "kane_mele_sumrule.py",
+   "mean": 0.07870438909123532,
+   "skew": -15.716361413007053
+  },
+  {
+   "file": "lambda_reading_check.py",
+   "mean": 0.2455115685531934,
+   "skew": -0.050015632328030836
+  },
+  {
+   "file": "logic_invisible_direction_check.py",
+   "mean": 0.11314443055956683,
+   "skew": -2.795930415936049
+  },
+  {
+   "file": "lorentz_signature_check.py",
+   "mean": 0.04910931077702016,
+   "skew": -4.877379926913249
+  },
+  {
+   "file": "m5_pinning_check.py",
+   "mean": 0.25591306940914066,
+   "skew": 0.4680063181278949
+  },
+  {
+   "file": "order_structure_n4_check.py",
+   "mean": 0.22525535319944573,
+   "skew": -2.1372243702135476
+  },
+  {
+   "file": "orthogonality_preservation.py",
+   "mean": 0.1347542054769947,
+   "skew": -9.975462506407851
+  },
+  {
+   "file": "quantum_skew_tensor_d.py",
+   "mean": 0.0670537921707448,
+   "skew": -13.515623619689995
+  },
+  {
+   "file": "real_data_scan.py",
+   "mean": 0.05867588901702416,
+   "skew": -4.868842542702291
+  },
+  {
+   "file": "real_data_scan_v2.py",
+   "mean": 0.05698926905461514,
+   "skew": -2.4057721987063023
+  },
+  {
+   "file": "relative_transport_check.py",
+   "mean": 0.11947211575176912,
+   "skew": -3.2886706283781693
+  },
+  {
+   "file": "s0_adjudication_check.py",
+   "mean": 0.20233666752708682,
+   "skew": -0.20100756305184694
+  },
+  {
+   "file": "semantic_locality_check.py",
+   "mean": 0.0886789905360716,
+   "skew": -3.671720513809779
+  },
+  {
+   "file": "statistical_frame_theorem.py",
+   "mean": 0.18569604557816533,
+   "skew": -1.9338707596703324
+  },
+  {
+   "file": "third_order_closure.py",
+   "mean": 0.08147853962259985,
+   "skew": -0.642796244217631
+  },
+  {
+   "file": "verify_qlf_v2_audit.py",
+   "mean": 0.4151255474493109,
+   "skew": -1.117597512454235
+  },
+  {
+   "file": "verify_triple_projection.py",
+   "mean": 0.2878420169775343,
+   "skew": -1.340705801310352
+  },
+  {
+   "file": "aggregate_v2.py",
+   "mean": 0.15493003163584976,
+   "skew": -0.7544335361543414
+  },
+  {
+   "file": "analyze_one.py",
+   "mean": 0.05829575494771375,
+   "skew": -1.3720916225487543
+  },
+  {
+   "file": "ci_check.py",
+   "mean": 0.10230574678191033,
+   "skew": -0.0134231211042598
+  },
+  {
+   "file": "code_quality_v2.py",
+   "mean": 0.10007857813231082,
+   "skew": -1.0846143336041993
+  },
+  {
+   "file": "patch_modified.py",
+   "mean": 0.1572575984197201,
+   "skew": -1.4790438199962037
+  },
+  {
+   "file": "pool_prospective.py",
+   "mean": 0.07702124858979632,
+   "skew": -0.7071067811865487
+  },
+  {
+   "file": "project_score.py",
+   "mean": 0.06644323586372505,
+   "skew": -1.2641610084066104
+  },
+  {
+   "file": "prospective.py",
+   "mean": 0.0700759771639979,
+   "skew": -1.0338000668294316
+  },
+  {
+   "file": "sensitivity_q.py",
+   "mean": 0.06135646712371663,
+   "skew": -1.7401033386047846
+  },
+  {
+   "file": "sensitivity_z.py",
+   "mean": 0.0699900491448523,
+   "skew": -7.985312086917787
+  },
+  {
+   "file": "md2html.py",
+   "mean": 0.13298220082314754,
+   "skew": -5.747048932153913
+  },
+  {
+   "file": "aggregate_v2.py",
+   "mean": 0.1553319612473726,
+   "skew": -0.7695058688801292
+  },
+  {
+   "file": "analyze_one.py",
+   "mean": 0.05829575494771375,
+   "skew": -1.3720916225487543
+  },
+  {
+   "file": "ci_check.py",
+   "mean": 0.10230574678191033,
+   "skew": -0.0134231211042598
+  },
+  {
+   "file": "code_quality_v2.py",
+   "mean": 0.0993286352292095,
+   "skew": -0.9830753207070348
+  },
+  {
+   "file": "patch_modified.py",
+   "mean": 0.1572575984197201,
+   "skew": -1.4790438199962037
+  },
+  {
+   "file": "pool_prospective.py",
+   "mean": 0.07702124858979632,
+   "skew": -0.7071067811865487
+  },
+  {
+   "file": "project_score.py",
+   "mean": 0.06644323586372505,
+   "skew": -1.2641610084066104
+  },
+  {
+   "file": "prospective.py",
+   "mean": 0.0700759771639979,
+   "skew": -1.0338000668294316
+  },
+  {
+   "file": "sensitivity_q.py",
+   "mean": 0.06135646712371663,
+   "skew": -1.7401033386047846
+  },
+  {
+   "file": "sensitivity_z.py",
+   "mean": 0.0699900491448523,
+   "skew": -7.985312086917787
+  },
+  {
+   "file": "verify_c_named.py",
+   "mean": 0.07276621154519708,
+   "skew": -1.0463799017720292
+  },
+  {
+   "file": "verify_c_named_hetero.py",
+   "mean": 0.07276621154519708,
+   "skew": -1.0463799017720292
+  },
+  {
+   "file": "verify_cpp_named.py",
+   "mean": 0.07648152726101522,
+   "skew": -1.0055062797864733
+  },
+  {
+   "file": "verify_java_named.py",
+   "mean": 0.07905368133988645,
+   "skew": -1.027450291739504
+  },
+  {
+   "file": "verify_python.py",
+   "mean": 0.06144758293246381,
+   "skew": -1.4834762399128376
+  },
+  {
+   "file": "verify_fantom5_real_seq.py",
+   "mean": 0.20938401277835575,
+   "skew": -0.30918521429889945
+  },
+  {
+   "file": "clang_verify_v3.py",
+   "mean": 0.017145964519870247,
+   "skew": -0.9988681377244505
+  },
+  {
+   "file": "code_verify_v3.py",
+   "mean": 0.06569130225450766,
+   "skew": -2.7988454814777115
+  },
+  {
+   "file": "dna_shared_v2_verify.py",
+   "mean": 0.04595897158852319,
+   "skew": -2.4492510492829616
+  },
+  {
+   "file": "dna_shared_verify_v3.py",
+   "mean": 0.035922484053117966,
+   "skew": -2.8613564368231295
+  },
+  {
+   "file": "dna_verify_v3.py",
+   "mean": 0.05774255037696273,
+   "skew": -1.7230106259659106
+  },
+  {
+   "file": "fetch_data.py",
+   "mean": 0.037052268697340546,
+   "skew": -1.3552879972742085
+  },
+  {
+   "file": "formalize_v21.py",
+   "mean": 0.12212474016695593,
+   "skew": 0.5084263138714042
+  },
+  {
+   "file": "formalize_v21_en.py",
+   "mean": 0.16233376601373337,
+   "skew": 0.3546542341205446
+  },
+  {
+   "file": "make_v21.py",
+   "mean": 0.1375824151691304,
+   "skew": -4.219079628472584
+  },
+  {
+   "file": "make_v21_en.py",
+   "mean": 0.11755838894566398,
+   "skew": 0.11447276140642561
+  },
+  {
+   "file": "d_asym_permutation.py",
+   "mean": 0.07537062211161644,
+   "skew": -1.727025270791082
+  },
+  {
+   "file": "delta_expansion_check.py",
+   "mean": 0.2689329500171906,
+   "skew": -1.2825772572701004
+  },
+  {
+   "file": "symbolic_check.py",
+   "mean": 0.07615293847819962,
+   "skew": -2.1225834102649284
+  },
+  {
+   "file": "sync_check.py",
+   "mean": 0.17780559025353723,
+   "skew": -1.9914121863378613
+  }
+ ]
+}
